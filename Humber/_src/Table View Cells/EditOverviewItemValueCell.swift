@@ -16,9 +16,15 @@ class EditOverviewItemValueCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.valueLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(title title: String, value: String) {

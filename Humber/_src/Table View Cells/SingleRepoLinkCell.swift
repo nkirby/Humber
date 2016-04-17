@@ -16,6 +16,12 @@ class SingleRepoLinkCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(text text: String) {

@@ -18,6 +18,13 @@ class SingleRepoCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.repoTitleLabel.text = ""
+        self.repoDescriptionLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(model model: GithubRepoModel) {

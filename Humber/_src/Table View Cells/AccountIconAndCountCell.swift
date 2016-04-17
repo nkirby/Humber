@@ -31,6 +31,16 @@ class AccountIconAndCountCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.iconImageView.image = nil
+        self.titleLabel.text = ""
+        self.countLabel.text = ""
+    }
+    
+// =======================================================
+
     internal func render(model model: AccountIconAndCountViewModel) {
         let titleAttrString = NSAttributedString(string: model.title, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),

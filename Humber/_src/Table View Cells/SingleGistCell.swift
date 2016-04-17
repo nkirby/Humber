@@ -17,6 +17,14 @@ class SingleGistCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.gistNameLabel.text = ""
+    }
+    
+// =======================================================
+
     internal func render(model model: GithubGistModel) {
         let attrString = NSAttributedString(string: model.gistDescription, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),

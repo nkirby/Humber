@@ -17,6 +17,14 @@ class EditOverviewAddCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+    }
+    
+// =======================================================
+
     internal func render() {
         let titleAttrString = NSAttributedString(string: "Add", attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .TintColor),

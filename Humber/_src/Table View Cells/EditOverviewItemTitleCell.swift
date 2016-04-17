@@ -22,7 +22,6 @@ class EditOverviewItemTitleCell: UITableViewCell, UITextFieldDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         self.textField.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [
             NSFontAttributeName: Theme.font(type: .Regular(12.0)),
@@ -44,10 +43,11 @@ class EditOverviewItemTitleCell: UITableViewCell, UITextFieldDelegate {
         
         if let tapGesture = self.tapGesture {
             tapGesture.view?.removeGestureRecognizer(tapGesture)
-            self.tapGesture = tapGesture
+            self.tapGesture = nil
         }
         
         self.delegate = nil
+        self.textField.text = ""
     }
     
 // =======================================================

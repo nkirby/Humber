@@ -18,6 +18,13 @@ class IssueHeaderCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.descriptionLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(model model: GithubIssueModel) {

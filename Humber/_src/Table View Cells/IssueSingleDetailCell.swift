@@ -18,6 +18,13 @@ class IssueSingleDetailCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.valueLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(title title: String, text: String) {

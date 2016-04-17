@@ -19,15 +19,22 @@ class AccountFollowedUserCell: UITableViewCell {
         // Initialization code
     }
 
-// =======================================================
-
     override func layoutSubviews() {
         super.layoutSubviews()
         
         self.iconImageView.layer.masksToBounds = true
         self.iconImageView.layer.cornerRadius = self.iconImageView.frame.size.width / 2.0
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.iconImageView.image = nil
+        self.usernameLabel.text = ""
+    }
     
+// =======================================================
+
     internal func render(model model: GithubUserModel) {
         let attrString = NSAttributedString(string: model.login, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),

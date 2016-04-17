@@ -19,15 +19,23 @@ class SingleIssueCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-// =======================================================
-
     override func layoutSubviews() {
         super.layoutSubviews()
         
         self.userImageView.layer.masksToBounds = true
         self.userImageView.layer.cornerRadius = self.userImageView.frame.size.width / 2.0
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.userImageView.image = nil
+        self.repoLabel.text = ""
+        self.issueTitleLabel.text = ""
+    }
     
+// =======================================================
+
     internal func render(model model: GithubIssueModel) {
         let titleAttrString = NSAttributedString(string: "#\(model.issueNumber) \(model.title)", attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),

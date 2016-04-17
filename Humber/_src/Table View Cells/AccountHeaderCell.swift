@@ -27,6 +27,14 @@ class AccountHeaderCell: UITableViewCell {
         self.avatarImageView.layer.cornerRadius = self.avatarImageView.frame.size.width / 2.0
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.avatarImageView.image = nil
+        self.nameLabel.text = ""
+        self.bioLabel.text = ""
+    }
+    
 // =======================================================
 
     internal func render(model model: GithubAccountModel) {

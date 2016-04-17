@@ -11,13 +11,21 @@ import HMGithub
 // =======================================================
 
 class SingleRepoHeaderCell: UITableViewCell {
-
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.descriptionLabel.text = ""
+    }
+    
+// =======================================================
 
     internal func render(model model: GithubRepoModel) {
         let titleAttrString = NSAttributedString(string: model.name, attributes: [

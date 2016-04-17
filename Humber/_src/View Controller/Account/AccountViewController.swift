@@ -253,7 +253,7 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
                 return vc
             }
 
-        case (self.tableSectionRepos, 1):
+        case (self.tableSectionRepos, 2):
             if let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoListViewController") as? RepoListViewController {
                 vc.type = .Private
                 return vc

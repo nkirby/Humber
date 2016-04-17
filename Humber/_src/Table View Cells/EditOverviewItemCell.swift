@@ -18,6 +18,15 @@ class EditOverviewItemCell: UITableViewCell {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.valueLabel.text = ""
+    }
+    
+// =======================================================
+
     internal func render(model model: GithubOverviewItemModel) {
         let titleAttrString = NSAttributedString(string: model.type.capitalizedString, attributes: [
             NSFontAttributeName: Theme.font(type: .Bold(12.0)),

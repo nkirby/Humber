@@ -1,33 +1,33 @@
-//
-//  SingleNotificationCell.swift
-//  Humber
-//
-//  Created by Nathaniel Kirby on 4/16/16.
-//  Copyright © 2016 projectspong. All rights reserved.
-//
+// =======================================================
+// Humber
+// Nathaniel Kirby
+// =======================================================
 
 import UIKit
 
 import HMCore
 import HMGithub
 
-class SingleNotificationCell: UITableViewCell {
+// =======================================================
 
+class SingleNotificationCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var repoLabel: UILabel!
     @IBOutlet var iconImageView: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.titleLabel.text = ""
+        self.repoLabel.text = ""
+        self.iconImageView.image = nil
     }
+    
+// =======================================================
 
     internal func render(model model: GithubNotificationModel) {
         let titleAttrString = NSAttributedString(string: model.title, attributes: [
@@ -46,7 +46,7 @@ class SingleNotificationCell: UITableViewCell {
         
         ImageCache.sharedImageCache.image(image: model.type.image()) {[weak self] success, image in
             self?.iconImageView.image = image?.imageWithRenderingMode(.AlwaysTemplate)
-            self?.iconImageView.tintColor = UIColor(white: 0.75, alpha: 1.0)
+            self?.iconImageView.tintColor = Theme.color(type: .SecondaryTextColor)
         }
     }
 }
