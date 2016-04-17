@@ -10,7 +10,7 @@ import HMGithub
 
 // =======================================================
 
-class EditOverviewItemViewController: UITableViewController {
+class EditOverviewItemViewController: UITableViewController, TableDividerUpdating {
     internal var itemModel: GithubOverviewItemModel?
     
     private var itemTitle = ""
@@ -31,6 +31,7 @@ class EditOverviewItemViewController: UITableViewController {
         self.setupNavigationItemTitle()
         self.setupTableSections()
         self.setupBarButtonItems()
+        self.updateTableDivider()
         
         if let model = self.itemModel {
             self.itemTitle = model.title

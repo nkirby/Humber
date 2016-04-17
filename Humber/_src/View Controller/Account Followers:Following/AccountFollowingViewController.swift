@@ -11,10 +11,14 @@ import HMGithub
 
 // =======================================================
 
-class AccountFollowingViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding {
+class AccountFollowingViewController: UITableViewController, PullToRefreshProviding, TableDividerUpdating {
     internal var username: String?
     private var users = [GithubUserModel]()
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - Lifecycle
     
@@ -24,8 +28,11 @@ class AccountFollowingViewController: UITableViewController, NavigationBarUpdati
         self.setupNavigationItem()
         self.setupTableView()
         self.setupPullToRefresh(self, action: #selector(AccountFollowingViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AccountFollowingViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,6 +52,11 @@ class AccountFollowingViewController: UITableViewController, NavigationBarUpdati
         self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

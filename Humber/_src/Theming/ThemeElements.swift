@@ -12,6 +12,7 @@ internal enum ColorType {
     case TintColor
     case ViewBackgroundColor
     case CellBackgroundColor
+    case DividerColor
 }
 
 internal enum FontType {

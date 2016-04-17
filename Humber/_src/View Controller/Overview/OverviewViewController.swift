@@ -18,11 +18,21 @@ class OverviewViewController: UICollectionViewController, UICollectionViewDelega
     private var overviewItems = [GithubOverviewItemModel]()
     private var viewControllers = [OverviewItemSingleStatViewController]()
     
+// =======================================================
+// MARK: - Init, etc...
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         self.navigationController?.tabBarItem.imageInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: -4.0, right: 0.0)
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+// =======================================================
+// MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +51,8 @@ class OverviewViewController: UICollectionViewController, UICollectionViewDelega
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(OverviewViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -84,6 +96,11 @@ class OverviewViewController: UICollectionViewController, UICollectionViewDelega
     private func setupBarButtonItems() {
         let barButtonItem = UIBarButtonItem(title: "Edit", style: .Done, target: self, action: #selector(OverviewViewController.didTapEdit))
         self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    @objc private func didChangeTheme() {
+        self.collectionView?.backgroundColor = Theme.color(type: .ViewBackgroundColor)
+        self.setupNavigationBarStyling()
     }
     
 // =======================================================

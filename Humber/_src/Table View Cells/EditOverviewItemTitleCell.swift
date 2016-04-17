@@ -53,8 +53,10 @@ class EditOverviewItemTitleCell: UITableViewCell, UITextFieldDelegate {
 // =======================================================
 
     internal func render(model model: GithubOverviewItemModel, delegate: EditOverviewTitleDelegate) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         self.delegate = delegate
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EditOverviewItemTitleCell.didTapView))
         delegate.tapGestureView.addGestureRecognizer(tapGesture)
         tapGesture.cancelsTouchesInView = false

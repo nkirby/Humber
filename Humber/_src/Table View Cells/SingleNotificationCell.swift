@@ -30,16 +30,18 @@ class SingleNotificationCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubNotificationModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: model.title, attributes: [
             NSFontAttributeName: Font.bold(size: 12.0),
-            NSForegroundColorAttributeName: UIColor(white: 0.05, alpha: 1.0)
+            NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor)
         ])
         
         self.titleLabel.attributedText = titleAttrString
         
         let repoAttrString = NSAttributedString(string: model.repository.fullName, attributes: [
             NSFontAttributeName: Font.regular(size: 12.0),
-            NSForegroundColorAttributeName: UIColor(white: 0.25, alpha: 1.0)
+            NSForegroundColorAttributeName: Theme.color(type: .SecondaryTextColor)
         ])
         
         self.repoLabel.attributedText = repoAttrString

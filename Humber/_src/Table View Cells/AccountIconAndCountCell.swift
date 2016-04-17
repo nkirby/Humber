@@ -42,6 +42,8 @@ class AccountIconAndCountCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: AccountIconAndCountViewModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+        
         let titleAttrString = NSAttributedString(string: model.title, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),
             NSFontAttributeName: Theme.font(type: .Regular(14.0))
@@ -57,8 +59,8 @@ class AccountIconAndCountCell: UITableViewCell {
         self.countLabel.attributedText = countAttrString
         
         ImageCache.sharedImageCache.image(image: model.icon) {[weak self] success, image in
-            self?.iconImageView.image = image
+            self?.iconImageView.image = image?.imageWithRenderingMode(.AlwaysTemplate)
+            self?.iconImageView.tintColor = Theme.color(type: .PrimaryTextColor)
         }
-        
     }
 }

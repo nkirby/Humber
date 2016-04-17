@@ -38,12 +38,21 @@ class RootViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.updateTheme()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         self.interfaceViewController?.view.frame = self.containerView.bounds
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        if Theme.currentThemeIsDark() {
+            return .LightContent
+        } else {
+            return .Default
+        }
     }
     
 // =======================================================
@@ -59,6 +68,8 @@ class RootViewController: UIViewController {
         
         self.containerView.backgroundColor = UIColor.blueColor()
         self.interfaceViewController = vc
+        
+        self.updateTheme()
     }
     
     private func displayLogin() {
@@ -71,6 +82,16 @@ class RootViewController: UIViewController {
         self.interfaceViewController = vc
     }
     
+    @objc private func updateTheme() {
+        self.setNeedsStatusBarAppearanceUpdate()
+        
+        guard let tabsController = self.interfaceViewController as? UITabBarController else {
+            return
+        }
+        
+        tabsController.tabBar.barTintColor = Theme.color(type: .ViewBackgroundColor)
+    }
+
 // =======================================================
 // MARK: - View Retrieval
     

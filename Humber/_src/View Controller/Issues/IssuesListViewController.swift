@@ -11,8 +11,11 @@ import HMGithub
 
 // =======================================================
 
-class IssuesListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class IssuesListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, TableDividerUpdating, UIViewControllerPreviewingDelegate {
     private var issues = [GithubIssueModel]()
+
+// =======================================================
+// MARK: - Init, etc...
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,6 +23,10 @@ class IssuesListViewController: UITableViewController, NavigationBarUpdating, Pu
         self.navigationController?.tabBarItem.imageInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: -4.0, right: 0.0)
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -32,12 +39,15 @@ class IssuesListViewController: UITableViewController, NavigationBarUpdating, Pu
         self.setupTableView()
         self.setupPullToRefresh()
         self.setupPullToRefresh(self, action: #selector(IssuesListViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(IssuesListViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -70,6 +80,12 @@ class IssuesListViewController: UITableViewController, NavigationBarUpdating, Pu
         self.refreshControl = refreshControl
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+        self.setupNavigationBarStyling()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

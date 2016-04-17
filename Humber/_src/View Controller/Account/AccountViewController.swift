@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class AccountViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class AccountViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate, TableDividerUpdating {
     private var user: GithubAccountModel?
 
     private var tableSectionAccount = 0
@@ -29,6 +29,10 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
         self.navigationController?.tabBarItem.imageInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: -4.0, right: 0.0)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -38,11 +42,16 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
         self.setupTableView()
         self.setupNavigationBarStyling()
         self.setupPullToRefresh(self, action: #selector(AccountViewController.sync))
+        self.updateTableDivider()
+        self.setupBarButtonItems()
+        
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AccountViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +68,17 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    private func setupBarButtonItems() {
+        let settingsButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .Plain, target: self, action: #selector(AccountViewController.didTapSettings))
+        self.navigationItem.rightBarButtonItem = settingsButton
+    }
+    
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+        self.setupNavigationBarStyling()
+    }
+    
 // =======================================================
 // MARK: - Data Lifecycle
     
@@ -73,6 +93,15 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
     
     @objc private func sync() {
         ServiceController.component(GithubAccountSyncProviding.self)?.syncCurrentGithubAccount().startWithNext { self.fetch() }
+    }
+    
+// =======================================================
+// MARK: - Actions
+    
+    @objc private func didTapSettings() {
+        let vc = SettingsViewController(style: .Grouped)
+        let navVC = UINavigationController(rootViewController: vc)
+        self.navigationController?.presentViewController(navVC, animated: true, completion: nil)
     }
     
 // =======================================================

@@ -32,6 +32,6 @@ class ApplicationStyleController: NSObject {
     }
     
     private static func setupThemes() {
-        Theme.registerThemes(themes: [LightTheme()])
+        Theme.registerThemes(themes: [LightTheme(), DarkTheme()])
     }
 }

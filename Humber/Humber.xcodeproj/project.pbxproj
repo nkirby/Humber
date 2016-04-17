@@ -67,6 +67,8 @@
 		C44021F21CC4448A00A4AC00 /* NavigationBarUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */; };
 		C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F31CC4449900A4AC00 /* ThemeElements.swift */; };
 		C44021F61CC4486900A4AC00 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */; };
+		C44021F81CC44BC000A4AC00 /* TableDividerUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F71CC44BC000A4AC00 /* TableDividerUpdating.swift */; };
+		C44021FA1CC4501000A4AC00 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F91CC4501000A4AC00 /* SettingsViewController.swift */; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -174,6 +176,8 @@
 		C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarUpdating.swift; path = _src/Protocols/NavigationBarUpdating.swift; sourceTree = "<group>"; };
 		C44021F31CC4449900A4AC00 /* ThemeElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeElements.swift; path = _src/Theming/ThemeElements.swift; sourceTree = "<group>"; };
 		C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTabBarViewController.swift; path = "_src/View Controller/Root/RootTabBarViewController.swift"; sourceTree = "<group>"; };
+		C44021F71CC44BC000A4AC00 /* TableDividerUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableDividerUpdating.swift; path = _src/Protocols/TableDividerUpdating.swift; sourceTree = "<group>"; };
+		C44021F91CC4501000A4AC00 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "_src/View Controller/Settings/SettingsViewController.swift"; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				C440211D1CC1ACF100A4AC00 /* Repo List */,
 				C44020BE1CC129E100A4AC00 /* Root */,
 				C44021D81CC3514200A4AC00 /* Selection */,
+				C44021FB1CC4501400A4AC00 /* Settings */,
 				C44021E41CC4058900A4AC00 /* Single Stats */,
 			);
 			name = "View Controller";
@@ -489,6 +494,7 @@
 			children = (
 				C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */,
 				C44021A01CC2FE8A00A4AC00 /* PullToRefreshProviding.swift */,
+				C44021F71CC44BC000A4AC00 /* TableDividerUpdating.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -545,6 +551,14 @@
 				C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */,
 			);
 			name = "Single Stats";
+			sourceTree = "<group>";
+		};
+		C44021FB1CC4501400A4AC00 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C44021F91CC4501000A4AC00 /* SettingsViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		C4ED35E11CBFEC9E008B8684 = {
@@ -877,6 +891,7 @@
 				C44021B01CC313BC00A4AC00 /* RepoViewController.swift in Sources */,
 				C440214F1CC295C500A4AC00 /* SingleNotificationCell.swift in Sources */,
 				C44021521CC29CF300A4AC00 /* ApplicationStyleController.swift in Sources */,
+				C44021F81CC44BC000A4AC00 /* TableDividerUpdating.swift in Sources */,
 				C44021C31CC32F9900A4AC00 /* EditOverviewViewController.swift in Sources */,
 				C44021061CC1919800A4AC00 /* AccountFollowedUserCell.swift in Sources */,
 				C44021461CC1F20400A4AC00 /* IssueHeaderCell.swift in Sources */,
@@ -890,6 +905,7 @@
 				C44021CB1CC3387200A4AC00 /* EditOverviewItemCell.swift in Sources */,
 				C44021A11CC2FE8A00A4AC00 /* PullToRefreshProviding.swift in Sources */,
 				C4ED36571CC006B3008B8684 /* ApplicationSetupController.swift in Sources */,
+				C44021FA1CC4501000A4AC00 /* SettingsViewController.swift in Sources */,
 				C44020BC1CC129D200A4AC00 /* RootViewController.swift in Sources */,
 				C44021F61CC4486900A4AC00 /* RootTabBarViewController.swift in Sources */,
 				C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */,

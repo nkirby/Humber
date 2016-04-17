@@ -37,6 +37,8 @@ class SingleIssueCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubIssueModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: "#\(model.issueNumber) \(model.title)", attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),
             NSFontAttributeName: Theme.font(type: .Bold(12.0))

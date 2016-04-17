@@ -28,6 +28,8 @@ class IssueSingleDetailCell: UITableViewCell {
 // =======================================================
 
     internal func render(title title: String, text: String) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: title, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),
             NSFontAttributeName: Theme.font(type: .Regular(12.0))

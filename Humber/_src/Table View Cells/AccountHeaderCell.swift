@@ -38,6 +38,8 @@ class AccountHeaderCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubAccountModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+        
         let nameAttrString = NSAttributedString(string: model.name, attributes: [
             NSFontAttributeName: Theme.font(type: .Bold(16.0)),
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor)

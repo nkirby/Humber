@@ -36,6 +36,8 @@ class AccountFollowedUserCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubUserModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let attrString = NSAttributedString(string: model.login, attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),
             NSFontAttributeName: Theme.font(type: .Bold(12.0))

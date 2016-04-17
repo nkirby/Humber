@@ -16,7 +16,7 @@ private enum EditFeedItem {
 
 // =======================================================
 
-class EditOverviewViewController: UITableViewController, NavigationBarUpdating {
+class EditOverviewViewController: UITableViewController, NavigationBarUpdating, TableDividerUpdating {
     private var feedItems = [EditFeedItem]()
     
     override func viewDidLoad() {
@@ -26,6 +26,7 @@ class EditOverviewViewController: UITableViewController, NavigationBarUpdating {
         self.setupNavigationItemTitle()
         self.setupTableView()
         self.setupBarButtonItems()
+        self.updateTableDivider()
         
         self.fetch()
 

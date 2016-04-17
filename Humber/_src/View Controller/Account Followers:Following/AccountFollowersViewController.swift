@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class AccountFollowersViewController: UITableViewController, PullToRefreshProviding {
+class AccountFollowersViewController: UITableViewController, PullToRefreshProviding, TableDividerUpdating {
     internal var username: String?
     private var users = [GithubUserModel]()
 
@@ -24,8 +24,11 @@ class AccountFollowersViewController: UITableViewController, PullToRefreshProvid
         self.setupNavigationItem()
         self.setupTableView()
         self.setupPullToRefresh(self, action: #selector(AccountFollowersViewController.sync))
-
+        self.updateTableDivider()
+        
         self.fetch()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AccountFollowersViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,6 +48,11 @@ class AccountFollowersViewController: UITableViewController, PullToRefreshProvid
         self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class RepoListViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class RepoListViewController: UITableViewController, PullToRefreshProviding, TableDividerUpdating, UIViewControllerPreviewingDelegate {
     internal var type = GithubRepoType.All
 
     private var tableSectionOwned = Int.min
@@ -21,6 +21,10 @@ class RepoListViewController: UITableViewController, PullToRefreshProviding, UIV
     private var ownedRepos = [GithubRepoModel]()
     private var contributedRepos = [GithubRepoModel]()
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -30,12 +34,15 @@ class RepoListViewController: UITableViewController, PullToRefreshProviding, UIV
         self.setupNavigationItemTitle()
         self.setupTableView()
         self.setupPullToRefresh(self, action: #selector(RepoListViewController.sync))
-
+        self.updateTableDivider()
+        
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RepoListViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -56,6 +63,11 @@ class RepoListViewController: UITableViewController, PullToRefreshProviding, UIV
         self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

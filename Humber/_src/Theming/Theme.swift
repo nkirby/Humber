@@ -18,6 +18,8 @@ internal final class Theme: NSObject {
     internal static func activateTheme(themeName name: String) {
         NSUserDefaults.standardUserDefaults().setValue(name, forKey: "HMCurrentThemeName")
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(self.themeChangedNotification, object: nil)
     }
     
     private static func currentTheme() -> Themable {
@@ -36,5 +38,13 @@ internal final class Theme: NSObject {
     
     internal static func font(type type: FontType) -> UIFont {
         return self.currentTheme().font(type: type)
+    }
+    
+    internal static func currentThemeName() -> String {
+        return self.currentTheme().name
+    }
+    
+    internal static func currentThemeIsDark() -> Bool {
+        return self.currentTheme().name == "Dark"
     }
 }

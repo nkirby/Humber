@@ -15,16 +15,19 @@ internal protocol SelectItemActionDelegate: class {
 
 // =======================================================
 
-class SelectItemTypeViewController: UITableViewController {
+class SelectItemTypeViewController: UITableViewController, TableDividerUpdating {
     internal weak var delegate: SelectItemActionDelegate?
-    
     private let items: [GithubOverviewItemAction] = [.Issues, .Notifications, .PullRequests]
+
+// =======================================================
+// MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setupTableView()
         self.setupNavigationItemTitle()
+        self.updateTableDivider()
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,12 +11,16 @@ import HMGithub
 
 // =======================================================
 
-class IssueViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class IssueViewController: UITableViewController, PullToRefreshProviding, TableDividerUpdating, UIViewControllerPreviewingDelegate {
     internal var repoOwner = ""
     internal var repoName = ""
     internal var issueNumber = ""
     internal var issue: GithubIssueModel?
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -27,12 +31,15 @@ class IssueViewController: UITableViewController, PullToRefreshProviding, UIView
         self.setupBarButtonItems()
         self.setupNavigationItemTitle()
         self.setupPullToRefresh(self, action: #selector(IssueViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(IssueViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -63,6 +70,11 @@ class IssueViewController: UITableViewController, PullToRefreshProviding, UIView
         self.navigationItem.title = "Issue"
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

@@ -15,7 +15,7 @@ internal protocol SelectRepoDelegate: class {
 
 // =======================================================
 
-class SelectRepoViewController: UITableViewController, PullToRefreshProviding {
+class SelectRepoViewController: UITableViewController, PullToRefreshProviding, TableDividerUpdating {
     internal weak var delegate: SelectRepoDelegate?
     
     private var repos = [GithubRepoModel]()
@@ -29,6 +29,7 @@ class SelectRepoViewController: UITableViewController, PullToRefreshProviding {
         self.setupTableView()
         self.setupNavigationItemTitle()
         self.setupPullToRefresh(self, action: #selector(SelectRepoViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
     }

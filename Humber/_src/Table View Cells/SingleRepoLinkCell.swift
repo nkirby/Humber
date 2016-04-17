@@ -25,6 +25,8 @@ class SingleRepoLinkCell: UITableViewCell {
 // =======================================================
 
     internal func render(text text: String) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let textAttrString = NSAttributedString(string: text, attributes: [
             NSFontAttributeName: Theme.font(type: .Bold(14.0)),
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor)

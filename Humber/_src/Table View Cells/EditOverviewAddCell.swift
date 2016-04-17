@@ -26,6 +26,8 @@ class EditOverviewAddCell: UITableViewCell {
 // =======================================================
 
     internal func render() {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: "Add", attributes: [
             NSForegroundColorAttributeName: Theme.color(type: .TintColor),
             NSFontAttributeName: Theme.font(type: .Bold(14.0))

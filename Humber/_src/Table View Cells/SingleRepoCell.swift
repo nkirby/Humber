@@ -28,6 +28,8 @@ class SingleRepoCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubRepoModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: model.fullName, attributes: [
             NSFontAttributeName: Theme.font(type: .Bold(14.0)),
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor)

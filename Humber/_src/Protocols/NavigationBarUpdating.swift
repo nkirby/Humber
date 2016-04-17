@@ -19,5 +19,7 @@ extension NavigationBarUpdating {
             NSForegroundColorAttributeName: Theme.color(type: .PrimaryTextColor),
             NSFontAttributeName: Theme.font(type: .Bold(14.0))
         ]
+        
+        self.navigationController?.navigationBar.barTintColor = Theme.color(type: .ViewBackgroundColor)
     }
 }

@@ -28,6 +28,8 @@ class EditOverviewItemCell: UITableViewCell {
 // =======================================================
 
     internal func render(model model: GithubOverviewItemModel) {
+        self.backgroundColor = Theme.color(type: .CellBackgroundColor)
+
         let titleAttrString = NSAttributedString(string: model.type.capitalizedString, attributes: [
             NSFontAttributeName: Theme.font(type: .Bold(12.0)),
             NSForegroundColorAttributeName: Theme.color(type: .TintColor)

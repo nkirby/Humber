@@ -12,9 +12,13 @@ import HMGithub
 
 // =======================================================
 
-class GistListViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class GistListViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate, TableDividerUpdating {
     private var gists = [GithubGistModel]()
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -24,12 +28,15 @@ class GistListViewController: UITableViewController, PullToRefreshProviding, UIV
         self.setupNavigationItem()
         self.setupTableView()
         self.setupPullToRefresh(self, action: #selector(GistListViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GistListViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -49,6 +56,11 @@ class GistListViewController: UITableViewController, PullToRefreshProviding, UIV
         self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
     }
     
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+    }
+
 // =======================================================
 // MARK: - Data Lifecycle
     

@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class NotificationListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
+class NotificationListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate, TableDividerUpdating {
     private var notifications = [GithubNotificationModel]()
 
 // =======================================================
@@ -23,6 +23,10 @@ class NotificationListViewController: UITableViewController, NavigationBarUpdati
         self.navigationController?.tabBarItem.imageInsets = UIEdgeInsets(top: 4.0, left: 0.0, bottom: -4.0, right: 0.0)
     }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
 // =======================================================
 // MARK: - View Lifecycle
     
@@ -33,12 +37,15 @@ class NotificationListViewController: UITableViewController, NavigationBarUpdati
         self.setupNavigationBarStyling()
         self.setupTableView()
         self.setupPullToRefresh(self, action: #selector(NotificationListViewController.sync))
+        self.updateTableDivider()
         
         self.fetch()
         
         if self.traitCollection.forceTouchCapability == .Available {
             self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NotificationListViewController.didChangeTheme), name: Theme.themeChangedNotification, object: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -63,6 +70,12 @@ class NotificationListViewController: UITableViewController, NavigationBarUpdati
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 60.0
         self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
+    }
+    
+    @objc private func didChangeTheme() {
+        self.updateTableDivider()
+        self.setupTableView()
+        self.setupNavigationBarStyling()
     }
     
 // =======================================================
