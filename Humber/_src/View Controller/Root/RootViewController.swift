@@ -21,10 +21,6 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         self.githubRouteHandler = GithubRouteHandler(rootViewController: self)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         
         ServiceController.sharedController.currentUser.producer
             .filter { $0 != nil }
@@ -38,6 +34,10 @@ class RootViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -45,7 +45,6 @@ class RootViewController: UIViewController {
     }
     
     private func updateInterface(user user: ServiceContainer) {
-        print("user? - \(user)")
         let vc = UIStoryboard(name: "Main", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("rootTabBarController") as! UITabBarController
         
         vc.tabBar.tintColor = UIColor(red: 75.0/255.0, green: 133.0/255.0, blue: 17.0/255.0, alpha: 1.0)
