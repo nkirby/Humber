@@ -38,6 +38,10 @@ internal final class ApplicationSetupController: NSObject {
             container.registerBuilder { context in
                 return SyncController(context: context)
             }
+            
+            container.registerBuilder { context in
+                return SpotlightIndexer()
+            }
         }
     }
 }

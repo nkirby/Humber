@@ -4,6 +4,7 @@
 // =======================================================
 
 import UIKit
+import CoreSpotlight
 
 import HMCore
 import HMGithub
@@ -30,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let provider = ServiceController.component(RealmFilePathProviding.self)?.realmContainerPath {
             print("Realm: \(provider)")
         }
+        
+//        CSSearchableIndex.defaultSearchableIndex().deleteAllSearchableItemsWithCompletionHandler(nil)
         
         return true
     }
@@ -62,6 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return false
+    }
+    
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let routePath = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                Router.route(path: routePath, source: .LaunchTarget)
+            }
+        }
+        
+        return true
     }
 }
 

@@ -29,6 +29,15 @@ extension SyncController: GithubAccountIssuesSyncProviding {
                 return SignalProducer { observer, _ in
                     data.saveCurrentIssues(issueResponses: responses, write: true)
                     
+                    for response in responses {
+                        if let repo = response.repository, let owner = repo.owner {
+                            //issues/:username/:repoName/issues/:issueNumber
+                            let item = SpotlightIndexableItem(title: response.title, contentDescription: response.body, identifier: "\(owner.login)/\(repo.name)/issues/\(response.issueNumber)", domain: "com.projectspong.Humber")
+                            ServiceController.component(SpotlightIndexProviding.self)?.indexItem(item: item)
+                        }
+                    }
+                    
+
                     observer.sendNext()
                     observer.sendCompleted()
                 }

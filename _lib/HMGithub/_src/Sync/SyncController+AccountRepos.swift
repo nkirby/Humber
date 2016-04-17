@@ -27,8 +27,14 @@ extension SyncController: GithubAccountRepoSyncProviding {
             .mapError { _ in return SyncError.Unknown }
             .flatMap(.Latest, transform: { responses -> SignalProducer<Void, SyncError> in
                 return SignalProducer { observer, _ in
-                    print("responses: \(responses.count)")
                     data.saveAccountRepos(repoResponses: responses, type: type, write: true)
+                    
+                    for response in responses {
+                        if let owner = response.owner {
+                            let item = SpotlightIndexableItem(title: response.fullName, contentDescription: response.repoDescription, identifier: "repos/\(owner.login)/\(response.name)", domain: "com.projectspong.Humber")
+                            ServiceController.component(SpotlightIndexProviding.self)?.indexItem(item: item)
+                        }
+                    }
                     
                     observer.sendNext()
                     observer.sendCompleted()

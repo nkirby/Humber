@@ -28,9 +28,9 @@ public class GithubRoutes: NSObject {
         return "gists/\(userID)/\(type)"
     }
     
-    public static let singleIssueTemplate = "issues/:username/:repoName/issues/:issueNumber"
+    public static let singleIssueTemplate = ":username/:repoName/issues/:issueNumber"
     public static func singleIssue(username username: String, repoName: String, number: Int) -> String {
-        return "issues/\(username)/\(repoName)/issues/\(number)"
+        return "\(username)/\(repoName)/issues/\(number)"
     }
     
     public static let singleRepoTemplate = "repos/:username/:repoName"
