@@ -1,0 +1,6 @@
+{
+    "keychain_app_group": false,
+    "router_logging": true,
+    "log_level": 5,
+    "route_scheme": "humber"
+}

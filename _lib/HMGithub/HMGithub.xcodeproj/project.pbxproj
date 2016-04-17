@@ -1,0 +1,785 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		170F7EAB7402FB78672AC5B1 /* Pods_HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C354554DA5D0D9824B406B9D /* Pods_HMGithub.framework */; };
+		C44020A31CC0130700A4AC00 /* HMGithub.h in Headers */ = {isa = PBXBuildFile; fileRef = C44020A21CC0130700A4AC00 /* HMGithub.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C44020AA1CC0130700A4AC00 /* HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C440209F1CC0130700A4AC00 /* HMGithub.framework */; };
+		C44020AF1CC0130700A4AC00 /* HMGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020AE1CC0130700A4AC00 /* HMGithubTests.swift */; };
+		C44020D81CC1467A00A4AC00 /* GithubLoginAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020D71CC1467A00A4AC00 /* GithubLoginAPI.swift */; };
+		C44020DC1CC1483400A4AC00 /* HMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44020DB1CC1483400A4AC00 /* HMCore.framework */; };
+		C44020DE1CC1529F00A4AC00 /* GithubAccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020DD1CC1529F00A4AC00 /* GithubAccountResponse.swift */; };
+		C44020E11CC152FA00A4AC00 /* GithubOAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020E01CC152FA00A4AC00 /* GithubOAuthToken.swift */; };
+		C44020E31CC1532700A4AC00 /* GithubKeychainStoreQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020E21CC1532700A4AC00 /* GithubKeychainStoreQuery.swift */; };
+		C44020E61CC15FEA00A4AC00 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020E51CC15FEA00A4AC00 /* GithubAPI.swift */; };
+		C44020E91CC1703800A4AC00 /* GithubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020E81CC1703800A4AC00 /* GithubRequest.swift */; };
+		C44020EB1CC1707C00A4AC00 /* GithubAPI+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020EA1CC1707C00A4AC00 /* GithubAPI+User.swift */; };
+		C44021041CC18C9100A4AC00 /* GithubUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021031CC18C9100A4AC00 /* GithubUserResponse.swift */; };
+		C440210A1CC1970600A4AC00 /* GithubAPI+Gists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021091CC1970600A4AC00 /* GithubAPI+Gists.swift */; };
+		C440210C1CC1994400A4AC00 /* GithubGistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440210B1CC1994400A4AC00 /* GithubGistResponse.swift */; };
+		C44021181CC1A99F00A4AC00 /* GithubAPI+Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021171CC1A99F00A4AC00 /* GithubAPI+Repos.swift */; };
+		C440211A1CC1A9D500A4AC00 /* GithubRepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021191CC1A9D500A4AC00 /* GithubRepoResponse.swift */; };
+		C44021381CC1D9C700A4AC00 /* GithubAPI+Issues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021371CC1D9C700A4AC00 /* GithubAPI+Issues.swift */; };
+		C440213A1CC1D9FA00A4AC00 /* GithubIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021391CC1D9FA00A4AC00 /* GithubIssueResponse.swift */; };
+		C44021481CC28B2900A4AC00 /* GithubNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021471CC28B2900A4AC00 /* GithubNotificationResponse.swift */; };
+		C440214A1CC28D9000A4AC00 /* GithubNotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021491CC28D9000A4AC00 /* GithubNotificationType.swift */; };
+		C440214D1CC28FB400A4AC00 /* GithubAPI+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440214C1CC28FB400A4AC00 /* GithubAPI+Notifications.swift */; };
+		C440215B1CC2BA5400A4AC00 /* GithubAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440215A1CC2BA5400A4AC00 /* GithubAccount.swift */; };
+		C440215E1CC2BB6300A4AC00 /* DataController+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440215D1CC2BB6300A4AC00 /* DataController+Account.swift */; };
+		C44021611CC2C38D00A4AC00 /* GithubAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021601CC2C38D00A4AC00 /* GithubAccountModel.swift */; };
+		C44021671CC2C8B400A4AC00 /* SyncController+Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021661CC2C8B400A4AC00 /* SyncController+Account.swift */; };
+		C440216D1CC2CF0D00A4AC00 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440216C1CC2CF0D00A4AC00 /* GithubUser.swift */; };
+		C440216F1CC2CF7E00A4AC00 /* GithubUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440216E1CC2CF7E00A4AC00 /* GithubUserModel.swift */; };
+		C44021711CC2D02A00A4AC00 /* DataController+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021701CC2D02A00A4AC00 /* DataController+User.swift */; };
+		C44021731CC2D57D00A4AC00 /* DataController+UserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021721CC2D57D00A4AC00 /* DataController+UserFollowing.swift */; };
+		C44021751CC2D5A700A4AC00 /* DataController+UserFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021741CC2D5A700A4AC00 /* DataController+UserFollowers.swift */; };
+		C44021771CC2D68800A4AC00 /* SyncController+AccountFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021761CC2D68800A4AC00 /* SyncController+AccountFollowing.swift */; };
+		C44021791CC2D6A500A4AC00 /* SyncController+AccountFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021781CC2D6A500A4AC00 /* SyncController+AccountFollowers.swift */; };
+		C440217B1CC2D8DE00A4AC00 /* GithubGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440217A1CC2D8DE00A4AC00 /* GithubGist.swift */; };
+		C440217D1CC2D95F00A4AC00 /* GithubGistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440217C1CC2D95F00A4AC00 /* GithubGistModel.swift */; };
+		C440217F1CC2DA7100A4AC00 /* DataController+Gists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440217E1CC2DA7100A4AC00 /* DataController+Gists.swift */; };
+		C44021811CC2DBB800A4AC00 /* DataController+UserGists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021801CC2DBB800A4AC00 /* DataController+UserGists.swift */; };
+		C44021831CC2DCB000A4AC00 /* SyncController+AccountGists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021821CC2DCB000A4AC00 /* SyncController+AccountGists.swift */; };
+		C44021851CC2E10300A4AC00 /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021841CC2E10300A4AC00 /* GithubRepo.swift */; };
+		C44021871CC2E1F400A4AC00 /* GithubRepoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021861CC2E1F400A4AC00 /* GithubRepoCollection.swift */; };
+		C44021891CC2E25400A4AC00 /* DataController+RepoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021881CC2E25400A4AC00 /* DataController+RepoCollection.swift */; };
+		C440218B1CC2E2DA00A4AC00 /* GithubRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440218A1CC2E2DA00A4AC00 /* GithubRepoModel.swift */; };
+		C440218D1CC2E76600A4AC00 /* DataController+Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440218C1CC2E76600A4AC00 /* DataController+Repos.swift */; };
+		C440218F1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440218E1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift */; };
+		C44021911CC2EE2C00A4AC00 /* GithubRepoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021901CC2EE2C00A4AC00 /* GithubRepoType.swift */; };
+		C44021931CC2F33800A4AC00 /* GithubIssueCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021921CC2F33800A4AC00 /* GithubIssueCollection.swift */; };
+		C44021951CC2F34D00A4AC00 /* GithubIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021941CC2F34D00A4AC00 /* GithubIssue.swift */; };
+		C44021971CC2F42000A4AC00 /* DataController+IssueCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021961CC2F42000A4AC00 /* DataController+IssueCollection.swift */; };
+		C44021991CC2F4DF00A4AC00 /* GithubIssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021981CC2F4DF00A4AC00 /* GithubIssueModel.swift */; };
+		C440219B1CC2F65D00A4AC00 /* DataController+Issues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440219A1CC2F65D00A4AC00 /* DataController+Issues.swift */; };
+		C440219D1CC2F8C900A4AC00 /* SyncController+AccountIssues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440219C1CC2F8C900A4AC00 /* SyncController+AccountIssues.swift */; };
+		C440219F1CC2FD7500A4AC00 /* SyncController+Issues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440219E1CC2FD7500A4AC00 /* SyncController+Issues.swift */; };
+		C44021A41CC301D300A4AC00 /* GithubNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021A31CC301D300A4AC00 /* GithubNotification.swift */; };
+		C44021A61CC3025500A4AC00 /* GithubNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021A51CC3025500A4AC00 /* GithubNotificationModel.swift */; };
+		C44021A81CC3039200A4AC00 /* DataController+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021A71CC3039200A4AC00 /* DataController+Notifications.swift */; };
+		C44021AA1CC3057000A4AC00 /* SyncController+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021A91CC3057000A4AC00 /* SyncController+Notifications.swift */; };
+		C44021AC1CC3084000A4AC00 /* GithubNotificationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021AB1CC3084000A4AC00 /* GithubNotificationCollection.swift */; };
+		C44021AE1CC3089300A4AC00 /* DataController+NotificationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021AD1CC3089300A4AC00 /* DataController+NotificationCollection.swift */; };
+		C44021BB1CC32C4A00A4AC00 /* GithubOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021BA1CC32C4A00A4AC00 /* GithubOverview.swift */; };
+		C44021BD1CC32C5C00A4AC00 /* GithubOverviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021BC1CC32C5C00A4AC00 /* GithubOverviewItem.swift */; };
+		C44021BF1CC32D3800A4AC00 /* DataController+Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021BE1CC32D3800A4AC00 /* DataController+Overview.swift */; };
+		C44021C11CC32D8200A4AC00 /* GithubOverviewItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021C01CC32D8200A4AC00 /* GithubOverviewItemModel.swift */; };
+		C44021C91CC3354700A4AC00 /* SyncController+OverviewEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021C81CC3354700A4AC00 /* SyncController+OverviewEdit.swift */; };
+		C44021D31CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D21CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift */; };
+		C44021D51CC34F7D00A4AC00 /* GithubOverviewItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D41CC34F7D00A4AC00 /* GithubOverviewItemAction.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C44020AB1CC0130700A4AC00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C44020961CC0130700A4AC00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C440209E1CC0130700A4AC00;
+			remoteInfo = HMGithub;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AB2E2632BF20B2DBCFEB813 /* Pods-HMGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMGithub.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-HMGithub/Pods-HMGithub.debug.xcconfig"; sourceTree = "<group>"; };
+		AB72FFCC4A380CCFB22707E8 /* Pods-HMGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMGithub.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-HMGithub/Pods-HMGithub.release.xcconfig"; sourceTree = "<group>"; };
+		C354554DA5D0D9824B406B9D /* Pods_HMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C440209F1CC0130700A4AC00 /* HMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C44020A21CC0130700A4AC00 /* HMGithub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMGithub.h; sourceTree = "<group>"; };
+		C44020A41CC0130700A4AC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C44020A91CC0130700A4AC00 /* HMGithubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HMGithubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C44020AE1CC0130700A4AC00 /* HMGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMGithubTests.swift; sourceTree = "<group>"; };
+		C44020B01CC0130700A4AC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C44020D71CC1467A00A4AC00 /* GithubLoginAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubLoginAPI.swift; path = _src/Login/GithubLoginAPI.swift; sourceTree = "<group>"; };
+		C44020DB1CC1483400A4AC00 /* HMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMCore.framework; path = "../HMCore/build/Debug-iphoneos/HMCore.framework"; sourceTree = "<group>"; };
+		C44020DD1CC1529F00A4AC00 /* GithubAccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAccountResponse.swift; path = _src/Response/GithubAccountResponse.swift; sourceTree = "<group>"; };
+		C44020E01CC152FA00A4AC00 /* GithubOAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOAuthToken.swift; path = _src/Response/GithubOAuthToken.swift; sourceTree = "<group>"; };
+		C44020E21CC1532700A4AC00 /* GithubKeychainStoreQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubKeychainStoreQuery.swift; path = _src/Keychain/GithubKeychainStoreQuery.swift; sourceTree = "<group>"; };
+		C44020E51CC15FEA00A4AC00 /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAPI.swift; path = _src/API/GithubAPI.swift; sourceTree = "<group>"; };
+		C44020E81CC1703800A4AC00 /* GithubRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRequest.swift; path = _src/API/GithubRequest.swift; sourceTree = "<group>"; };
+		C44020EA1CC1707C00A4AC00 /* GithubAPI+User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+User.swift"; path = "_src/API/GithubAPI+User.swift"; sourceTree = "<group>"; };
+		C44021031CC18C9100A4AC00 /* GithubUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubUserResponse.swift; path = _src/Response/GithubUserResponse.swift; sourceTree = "<group>"; };
+		C44021091CC1970600A4AC00 /* GithubAPI+Gists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+Gists.swift"; path = "_src/API/GithubAPI+Gists.swift"; sourceTree = "<group>"; };
+		C440210B1CC1994400A4AC00 /* GithubGistResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubGistResponse.swift; path = _src/Response/GithubGistResponse.swift; sourceTree = "<group>"; };
+		C44021171CC1A99F00A4AC00 /* GithubAPI+Repos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+Repos.swift"; path = "_src/API/GithubAPI+Repos.swift"; sourceTree = "<group>"; };
+		C44021191CC1A9D500A4AC00 /* GithubRepoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRepoResponse.swift; path = _src/Response/GithubRepoResponse.swift; sourceTree = "<group>"; };
+		C44021371CC1D9C700A4AC00 /* GithubAPI+Issues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+Issues.swift"; path = "_src/API/GithubAPI+Issues.swift"; sourceTree = "<group>"; };
+		C44021391CC1D9FA00A4AC00 /* GithubIssueResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubIssueResponse.swift; path = _src/Response/GithubIssueResponse.swift; sourceTree = "<group>"; };
+		C44021471CC28B2900A4AC00 /* GithubNotificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubNotificationResponse.swift; path = _src/Response/GithubNotificationResponse.swift; sourceTree = "<group>"; };
+		C44021491CC28D9000A4AC00 /* GithubNotificationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubNotificationType.swift; path = _src/Types/GithubNotificationType.swift; sourceTree = "<group>"; };
+		C440214C1CC28FB400A4AC00 /* GithubAPI+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+Notifications.swift"; path = "_src/API/GithubAPI+Notifications.swift"; sourceTree = "<group>"; };
+		C440215A1CC2BA5400A4AC00 /* GithubAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAccount.swift; path = _src/Realm/GithubAccount.swift; sourceTree = "<group>"; };
+		C440215D1CC2BB6300A4AC00 /* DataController+Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Account.swift"; path = "_src/Data/DataController+Account.swift"; sourceTree = "<group>"; };
+		C44021601CC2C38D00A4AC00 /* GithubAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubAccountModel.swift; path = _src/Model/GithubAccountModel.swift; sourceTree = "<group>"; };
+		C44021661CC2C8B400A4AC00 /* SyncController+Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+Account.swift"; path = "_src/Sync/SyncController+Account.swift"; sourceTree = "<group>"; };
+		C440216C1CC2CF0D00A4AC00 /* GithubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubUser.swift; path = _src/Realm/GithubUser.swift; sourceTree = "<group>"; };
+		C440216E1CC2CF7E00A4AC00 /* GithubUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubUserModel.swift; path = _src/Model/GithubUserModel.swift; sourceTree = "<group>"; };
+		C44021701CC2D02A00A4AC00 /* DataController+User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+User.swift"; path = "_src/Data/DataController+User.swift"; sourceTree = "<group>"; };
+		C44021721CC2D57D00A4AC00 /* DataController+UserFollowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+UserFollowing.swift"; path = "_src/Data/DataController+UserFollowing.swift"; sourceTree = "<group>"; };
+		C44021741CC2D5A700A4AC00 /* DataController+UserFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+UserFollowers.swift"; path = "_src/Data/DataController+UserFollowers.swift"; sourceTree = "<group>"; };
+		C44021761CC2D68800A4AC00 /* SyncController+AccountFollowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+AccountFollowing.swift"; path = "_src/Sync/SyncController+AccountFollowing.swift"; sourceTree = "<group>"; };
+		C44021781CC2D6A500A4AC00 /* SyncController+AccountFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+AccountFollowers.swift"; path = "_src/Sync/SyncController+AccountFollowers.swift"; sourceTree = "<group>"; };
+		C440217A1CC2D8DE00A4AC00 /* GithubGist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubGist.swift; path = _src/Realm/GithubGist.swift; sourceTree = "<group>"; };
+		C440217C1CC2D95F00A4AC00 /* GithubGistModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubGistModel.swift; path = _src/Model/GithubGistModel.swift; sourceTree = "<group>"; };
+		C440217E1CC2DA7100A4AC00 /* DataController+Gists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Gists.swift"; path = "_src/Data/DataController+Gists.swift"; sourceTree = "<group>"; };
+		C44021801CC2DBB800A4AC00 /* DataController+UserGists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+UserGists.swift"; path = "_src/Data/DataController+UserGists.swift"; sourceTree = "<group>"; };
+		C44021821CC2DCB000A4AC00 /* SyncController+AccountGists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+AccountGists.swift"; path = "_src/Sync/SyncController+AccountGists.swift"; sourceTree = "<group>"; };
+		C44021841CC2E10300A4AC00 /* GithubRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRepo.swift; path = _src/Realm/GithubRepo.swift; sourceTree = "<group>"; };
+		C44021861CC2E1F400A4AC00 /* GithubRepoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRepoCollection.swift; path = _src/Realm/GithubRepoCollection.swift; sourceTree = "<group>"; };
+		C44021881CC2E25400A4AC00 /* DataController+RepoCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+RepoCollection.swift"; path = "_src/Data/DataController+RepoCollection.swift"; sourceTree = "<group>"; };
+		C440218A1CC2E2DA00A4AC00 /* GithubRepoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRepoModel.swift; path = _src/Model/GithubRepoModel.swift; sourceTree = "<group>"; };
+		C440218C1CC2E76600A4AC00 /* DataController+Repos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Repos.swift"; path = "_src/Data/DataController+Repos.swift"; sourceTree = "<group>"; };
+		C440218E1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+AccountRepos.swift"; path = "_src/Sync/SyncController+AccountRepos.swift"; sourceTree = "<group>"; };
+		C44021901CC2EE2C00A4AC00 /* GithubRepoType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubRepoType.swift; path = _src/Types/GithubRepoType.swift; sourceTree = "<group>"; };
+		C44021921CC2F33800A4AC00 /* GithubIssueCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubIssueCollection.swift; path = _src/Realm/GithubIssueCollection.swift; sourceTree = "<group>"; };
+		C44021941CC2F34D00A4AC00 /* GithubIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubIssue.swift; path = _src/Realm/GithubIssue.swift; sourceTree = "<group>"; };
+		C44021961CC2F42000A4AC00 /* DataController+IssueCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+IssueCollection.swift"; path = "_src/Data/DataController+IssueCollection.swift"; sourceTree = "<group>"; };
+		C44021981CC2F4DF00A4AC00 /* GithubIssueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubIssueModel.swift; path = _src/Model/GithubIssueModel.swift; sourceTree = "<group>"; };
+		C440219A1CC2F65D00A4AC00 /* DataController+Issues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Issues.swift"; path = "_src/Data/DataController+Issues.swift"; sourceTree = "<group>"; };
+		C440219C1CC2F8C900A4AC00 /* SyncController+AccountIssues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+AccountIssues.swift"; path = "_src/Sync/SyncController+AccountIssues.swift"; sourceTree = "<group>"; };
+		C440219E1CC2FD7500A4AC00 /* SyncController+Issues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+Issues.swift"; path = "_src/Sync/SyncController+Issues.swift"; sourceTree = "<group>"; };
+		C44021A31CC301D300A4AC00 /* GithubNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubNotification.swift; path = _src/Realm/GithubNotification.swift; sourceTree = "<group>"; };
+		C44021A51CC3025500A4AC00 /* GithubNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubNotificationModel.swift; path = _src/Model/GithubNotificationModel.swift; sourceTree = "<group>"; };
+		C44021A71CC3039200A4AC00 /* DataController+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Notifications.swift"; path = "_src/Data/DataController+Notifications.swift"; sourceTree = "<group>"; };
+		C44021A91CC3057000A4AC00 /* SyncController+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+Notifications.swift"; path = "_src/Sync/SyncController+Notifications.swift"; sourceTree = "<group>"; };
+		C44021AB1CC3084000A4AC00 /* GithubNotificationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubNotificationCollection.swift; path = _src/Realm/GithubNotificationCollection.swift; sourceTree = "<group>"; };
+		C44021AD1CC3089300A4AC00 /* DataController+NotificationCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+NotificationCollection.swift"; path = "_src/Data/DataController+NotificationCollection.swift"; sourceTree = "<group>"; };
+		C44021BA1CC32C4A00A4AC00 /* GithubOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverview.swift; path = _src/Realm/GithubOverview.swift; sourceTree = "<group>"; };
+		C44021BC1CC32C5C00A4AC00 /* GithubOverviewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItem.swift; path = _src/Realm/GithubOverviewItem.swift; sourceTree = "<group>"; };
+		C44021BE1CC32D3800A4AC00 /* DataController+Overview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataController+Overview.swift"; path = "_src/Data/DataController+Overview.swift"; sourceTree = "<group>"; };
+		C44021C01CC32D8200A4AC00 /* GithubOverviewItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItemModel.swift; path = _src/Model/GithubOverviewItemModel.swift; sourceTree = "<group>"; };
+		C44021C81CC3354700A4AC00 /* SyncController+OverviewEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+OverviewEdit.swift"; path = "_src/Sync/SyncController+OverviewEdit.swift"; sourceTree = "<group>"; };
+		C44021D21CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItemThreshold.swift; path = _src/Types/GithubOverviewItemThreshold.swift; sourceTree = "<group>"; };
+		C44021D41CC34F7D00A4AC00 /* GithubOverviewItemAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItemAction.swift; path = _src/Types/GithubOverviewItemAction.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C440209B1CC0130700A4AC00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44020DC1CC1483400A4AC00 /* HMCore.framework in Frameworks */,
+				170F7EAB7402FB78672AC5B1 /* Pods_HMGithub.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C44020A61CC0130700A4AC00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44020AA1CC0130700A4AC00 /* HMGithub.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9750305E2CF04B0A2EF34D1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C44020DB1CC1483400A4AC00 /* HMCore.framework */,
+				C354554DA5D0D9824B406B9D /* Pods_HMGithub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA347181F852FBE8DB83A532 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AB2E2632BF20B2DBCFEB813 /* Pods-HMGithub.debug.xcconfig */,
+				AB72FFCC4A380CCFB22707E8 /* Pods-HMGithub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C44020951CC0130700A4AC00 = {
+			isa = PBXGroup;
+			children = (
+				C44020D91CC1467E00A4AC00 /* _src */,
+				C44020A11CC0130700A4AC00 /* HMGithub */,
+				C44020AD1CC0130700A4AC00 /* HMGithubTests */,
+				C44020A01CC0130700A4AC00 /* Products */,
+				AA347181F852FBE8DB83A532 /* Pods */,
+				9750305E2CF04B0A2EF34D1B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C44020A01CC0130700A4AC00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C440209F1CC0130700A4AC00 /* HMGithub.framework */,
+				C44020A91CC0130700A4AC00 /* HMGithubTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C44020A11CC0130700A4AC00 /* HMGithub */ = {
+			isa = PBXGroup;
+			children = (
+				C44020A21CC0130700A4AC00 /* HMGithub.h */,
+				C44020A41CC0130700A4AC00 /* Info.plist */,
+			);
+			path = HMGithub;
+			sourceTree = "<group>";
+		};
+		C44020AD1CC0130700A4AC00 /* HMGithubTests */ = {
+			isa = PBXGroup;
+			children = (
+				C44020AE1CC0130700A4AC00 /* HMGithubTests.swift */,
+				C44020B01CC0130700A4AC00 /* Info.plist */,
+			);
+			path = HMGithubTests;
+			sourceTree = "<group>";
+		};
+		C44020D91CC1467E00A4AC00 /* _src */ = {
+			isa = PBXGroup;
+			children = (
+				C44020E71CC15FED00A4AC00 /* API */,
+				C440215F1CC2BB6700A4AC00 /* Data */,
+				C44020E41CC1532B00A4AC00 /* Keychain */,
+				C44020DA1CC1468200A4AC00 /* Login */,
+				C44021621CC2C39000A4AC00 /* Model */,
+				C440215C1CC2BA5800A4AC00 /* Realm */,
+				C44020DF1CC152A500A4AC00 /* Response */,
+				C44021681CC2C8B800A4AC00 /* Sync */,
+				C440214B1CC28D9500A4AC00 /* Types */,
+			);
+			name = _src;
+			sourceTree = "<group>";
+		};
+		C44020DA1CC1468200A4AC00 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C44020D71CC1467A00A4AC00 /* GithubLoginAPI.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		C44020DF1CC152A500A4AC00 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				C44020E01CC152FA00A4AC00 /* GithubOAuthToken.swift */,
+				C44020DD1CC1529F00A4AC00 /* GithubAccountResponse.swift */,
+				C44021031CC18C9100A4AC00 /* GithubUserResponse.swift */,
+				C440210B1CC1994400A4AC00 /* GithubGistResponse.swift */,
+				C44021191CC1A9D500A4AC00 /* GithubRepoResponse.swift */,
+				C44021391CC1D9FA00A4AC00 /* GithubIssueResponse.swift */,
+				C44021471CC28B2900A4AC00 /* GithubNotificationResponse.swift */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
+		C44020E41CC1532B00A4AC00 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				C44020E21CC1532700A4AC00 /* GithubKeychainStoreQuery.swift */,
+			);
+			name = Keychain;
+			sourceTree = "<group>";
+		};
+		C44020E71CC15FED00A4AC00 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C44020E81CC1703800A4AC00 /* GithubRequest.swift */,
+				C44020E51CC15FEA00A4AC00 /* GithubAPI.swift */,
+				C44021091CC1970600A4AC00 /* GithubAPI+Gists.swift */,
+				C44021371CC1D9C700A4AC00 /* GithubAPI+Issues.swift */,
+				C440214C1CC28FB400A4AC00 /* GithubAPI+Notifications.swift */,
+				C44021171CC1A99F00A4AC00 /* GithubAPI+Repos.swift */,
+				C44020EA1CC1707C00A4AC00 /* GithubAPI+User.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		C440214B1CC28D9500A4AC00 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C44021491CC28D9000A4AC00 /* GithubNotificationType.swift */,
+				C44021901CC2EE2C00A4AC00 /* GithubRepoType.swift */,
+				C44021D21CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift */,
+				C44021D41CC34F7D00A4AC00 /* GithubOverviewItemAction.swift */,
+			);
+			name = Types;
+			sourceTree = "<group>";
+		};
+		C440215C1CC2BA5800A4AC00 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				C440215A1CC2BA5400A4AC00 /* GithubAccount.swift */,
+				C440216C1CC2CF0D00A4AC00 /* GithubUser.swift */,
+				C440217A1CC2D8DE00A4AC00 /* GithubGist.swift */,
+				C44021841CC2E10300A4AC00 /* GithubRepo.swift */,
+				C44021861CC2E1F400A4AC00 /* GithubRepoCollection.swift */,
+				C44021921CC2F33800A4AC00 /* GithubIssueCollection.swift */,
+				C44021941CC2F34D00A4AC00 /* GithubIssue.swift */,
+				C44021AB1CC3084000A4AC00 /* GithubNotificationCollection.swift */,
+				C44021A31CC301D300A4AC00 /* GithubNotification.swift */,
+				C44021BA1CC32C4A00A4AC00 /* GithubOverview.swift */,
+				C44021BC1CC32C5C00A4AC00 /* GithubOverviewItem.swift */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		C440215F1CC2BB6700A4AC00 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C440215D1CC2BB6300A4AC00 /* DataController+Account.swift */,
+				C440217E1CC2DA7100A4AC00 /* DataController+Gists.swift */,
+				C44021961CC2F42000A4AC00 /* DataController+IssueCollection.swift */,
+				C440219A1CC2F65D00A4AC00 /* DataController+Issues.swift */,
+				C44021AD1CC3089300A4AC00 /* DataController+NotificationCollection.swift */,
+				C44021A71CC3039200A4AC00 /* DataController+Notifications.swift */,
+				C44021BE1CC32D3800A4AC00 /* DataController+Overview.swift */,
+				C44021881CC2E25400A4AC00 /* DataController+RepoCollection.swift */,
+				C440218C1CC2E76600A4AC00 /* DataController+Repos.swift */,
+				C44021701CC2D02A00A4AC00 /* DataController+User.swift */,
+				C44021801CC2DBB800A4AC00 /* DataController+UserGists.swift */,
+				C44021721CC2D57D00A4AC00 /* DataController+UserFollowing.swift */,
+				C44021741CC2D5A700A4AC00 /* DataController+UserFollowers.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		C44021621CC2C39000A4AC00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C44021601CC2C38D00A4AC00 /* GithubAccountModel.swift */,
+				C440216E1CC2CF7E00A4AC00 /* GithubUserModel.swift */,
+				C440217C1CC2D95F00A4AC00 /* GithubGistModel.swift */,
+				C440218A1CC2E2DA00A4AC00 /* GithubRepoModel.swift */,
+				C44021981CC2F4DF00A4AC00 /* GithubIssueModel.swift */,
+				C44021A51CC3025500A4AC00 /* GithubNotificationModel.swift */,
+				C44021C01CC32D8200A4AC00 /* GithubOverviewItemModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C44021681CC2C8B800A4AC00 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				C44021661CC2C8B400A4AC00 /* SyncController+Account.swift */,
+				C44021821CC2DCB000A4AC00 /* SyncController+AccountGists.swift */,
+				C44021761CC2D68800A4AC00 /* SyncController+AccountFollowing.swift */,
+				C44021781CC2D6A500A4AC00 /* SyncController+AccountFollowers.swift */,
+				C440219C1CC2F8C900A4AC00 /* SyncController+AccountIssues.swift */,
+				C440218E1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift */,
+				C440219E1CC2FD7500A4AC00 /* SyncController+Issues.swift */,
+				C44021A91CC3057000A4AC00 /* SyncController+Notifications.swift */,
+				C44021C81CC3354700A4AC00 /* SyncController+OverviewEdit.swift */,
+			);
+			name = Sync;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C440209C1CC0130700A4AC00 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44020A31CC0130700A4AC00 /* HMGithub.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C440209E1CC0130700A4AC00 /* HMGithub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C44020B31CC0130700A4AC00 /* Build configuration list for PBXNativeTarget "HMGithub" */;
+			buildPhases = (
+				FCF98EC2A7B2047825B9B875 /* 📦 Check Pods Manifest.lock */,
+				C440209A1CC0130700A4AC00 /* Sources */,
+				C440209B1CC0130700A4AC00 /* Frameworks */,
+				C440209C1CC0130700A4AC00 /* Headers */,
+				C440209D1CC0130700A4AC00 /* Resources */,
+				69F340D5E3E548F560529183 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HMGithub;
+			productName = HMGithub;
+			productReference = C440209F1CC0130700A4AC00 /* HMGithub.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C44020A81CC0130700A4AC00 /* HMGithubTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C44020B61CC0130700A4AC00 /* Build configuration list for PBXNativeTarget "HMGithubTests" */;
+			buildPhases = (
+				C44020A51CC0130700A4AC00 /* Sources */,
+				C44020A61CC0130700A4AC00 /* Frameworks */,
+				C44020A71CC0130700A4AC00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C44020AC1CC0130700A4AC00 /* PBXTargetDependency */,
+			);
+			name = HMGithubTests;
+			productName = HMGithubTests;
+			productReference = C44020A91CC0130700A4AC00 /* HMGithubTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C44020961CC0130700A4AC00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = projectspong;
+				TargetAttributes = {
+					C440209E1CC0130700A4AC00 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					C44020A81CC0130700A4AC00 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = C44020991CC0130700A4AC00 /* Build configuration list for PBXProject "HMGithub" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C44020951CC0130700A4AC00;
+			productRefGroup = C44020A01CC0130700A4AC00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C440209E1CC0130700A4AC00 /* HMGithub */,
+				C44020A81CC0130700A4AC00 /* HMGithubTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C440209D1CC0130700A4AC00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C44020A71CC0130700A4AC00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69F340D5E3E548F560529183 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-HMGithub/Pods-HMGithub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCF98EC2A7B2047825B9B875 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C440209A1CC0130700A4AC00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44021481CC28B2900A4AC00 /* GithubNotificationResponse.swift in Sources */,
+				C440214D1CC28FB400A4AC00 /* GithubAPI+Notifications.swift in Sources */,
+				C440210A1CC1970600A4AC00 /* GithubAPI+Gists.swift in Sources */,
+				C44021BB1CC32C4A00A4AC00 /* GithubOverview.swift in Sources */,
+				C44021D51CC34F7D00A4AC00 /* GithubOverviewItemAction.swift in Sources */,
+				C44021041CC18C9100A4AC00 /* GithubUserResponse.swift in Sources */,
+				C440219D1CC2F8C900A4AC00 /* SyncController+AccountIssues.swift in Sources */,
+				C44021731CC2D57D00A4AC00 /* DataController+UserFollowing.swift in Sources */,
+				C440214A1CC28D9000A4AC00 /* GithubNotificationType.swift in Sources */,
+				C44021791CC2D6A500A4AC00 /* SyncController+AccountFollowers.swift in Sources */,
+				C44021AA1CC3057000A4AC00 /* SyncController+Notifications.swift in Sources */,
+				C440218F1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift in Sources */,
+				C44020E91CC1703800A4AC00 /* GithubRequest.swift in Sources */,
+				C44021AC1CC3084000A4AC00 /* GithubNotificationCollection.swift in Sources */,
+				C440213A1CC1D9FA00A4AC00 /* GithubIssueResponse.swift in Sources */,
+				C440219B1CC2F65D00A4AC00 /* DataController+Issues.swift in Sources */,
+				C44020DE1CC1529F00A4AC00 /* GithubAccountResponse.swift in Sources */,
+				C44021C11CC32D8200A4AC00 /* GithubOverviewItemModel.swift in Sources */,
+				C44021611CC2C38D00A4AC00 /* GithubAccountModel.swift in Sources */,
+				C44021811CC2DBB800A4AC00 /* DataController+UserGists.swift in Sources */,
+				C440216D1CC2CF0D00A4AC00 /* GithubUser.swift in Sources */,
+				C44021991CC2F4DF00A4AC00 /* GithubIssueModel.swift in Sources */,
+				C44021A61CC3025500A4AC00 /* GithubNotificationModel.swift in Sources */,
+				C44021671CC2C8B400A4AC00 /* SyncController+Account.swift in Sources */,
+				C440217D1CC2D95F00A4AC00 /* GithubGistModel.swift in Sources */,
+				C44021951CC2F34D00A4AC00 /* GithubIssue.swift in Sources */,
+				C440217B1CC2D8DE00A4AC00 /* GithubGist.swift in Sources */,
+				C44021A81CC3039200A4AC00 /* DataController+Notifications.swift in Sources */,
+				C44021851CC2E10300A4AC00 /* GithubRepo.swift in Sources */,
+				C44021911CC2EE2C00A4AC00 /* GithubRepoType.swift in Sources */,
+				C44021751CC2D5A700A4AC00 /* DataController+UserFollowers.swift in Sources */,
+				C440215B1CC2BA5400A4AC00 /* GithubAccount.swift in Sources */,
+				C44021D31CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift in Sources */,
+				C44021BD1CC32C5C00A4AC00 /* GithubOverviewItem.swift in Sources */,
+				C440217F1CC2DA7100A4AC00 /* DataController+Gists.swift in Sources */,
+				C44021971CC2F42000A4AC00 /* DataController+IssueCollection.swift in Sources */,
+				C44020EB1CC1707C00A4AC00 /* GithubAPI+User.swift in Sources */,
+				C440216F1CC2CF7E00A4AC00 /* GithubUserModel.swift in Sources */,
+				C44020E61CC15FEA00A4AC00 /* GithubAPI.swift in Sources */,
+				C440210C1CC1994400A4AC00 /* GithubGistResponse.swift in Sources */,
+				C440211A1CC1A9D500A4AC00 /* GithubRepoResponse.swift in Sources */,
+				C44021891CC2E25400A4AC00 /* DataController+RepoCollection.swift in Sources */,
+				C440215E1CC2BB6300A4AC00 /* DataController+Account.swift in Sources */,
+				C44021BF1CC32D3800A4AC00 /* DataController+Overview.swift in Sources */,
+				C44020D81CC1467A00A4AC00 /* GithubLoginAPI.swift in Sources */,
+				C44021771CC2D68800A4AC00 /* SyncController+AccountFollowing.swift in Sources */,
+				C440218B1CC2E2DA00A4AC00 /* GithubRepoModel.swift in Sources */,
+				C44021C91CC3354700A4AC00 /* SyncController+OverviewEdit.swift in Sources */,
+				C44021871CC2E1F400A4AC00 /* GithubRepoCollection.swift in Sources */,
+				C440218D1CC2E76600A4AC00 /* DataController+Repos.swift in Sources */,
+				C44021AE1CC3089300A4AC00 /* DataController+NotificationCollection.swift in Sources */,
+				C44021381CC1D9C700A4AC00 /* GithubAPI+Issues.swift in Sources */,
+				C44021711CC2D02A00A4AC00 /* DataController+User.swift in Sources */,
+				C440219F1CC2FD7500A4AC00 /* SyncController+Issues.swift in Sources */,
+				C44021831CC2DCB000A4AC00 /* SyncController+AccountGists.swift in Sources */,
+				C44021931CC2F33800A4AC00 /* GithubIssueCollection.swift in Sources */,
+				C44020E11CC152FA00A4AC00 /* GithubOAuthToken.swift in Sources */,
+				C44021A41CC301D300A4AC00 /* GithubNotification.swift in Sources */,
+				C44020E31CC1532700A4AC00 /* GithubKeychainStoreQuery.swift in Sources */,
+				C44021181CC1A99F00A4AC00 /* GithubAPI+Repos.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C44020A51CC0130700A4AC00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44020AF1CC0130700A4AC00 /* HMGithubTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C44020AC1CC0130700A4AC00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C440209E1CC0130700A4AC00 /* HMGithub */;
+			targetProxy = C44020AB1CC0130700A4AC00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C44020B11CC0130700A4AC00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C44020B21CC0130700A4AC00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C44020B41CC0130700A4AC00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AB2E2632BF20B2DBCFEB813 /* Pods-HMGithub.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HMGithub/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.HMGithub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C44020B51CC0130700A4AC00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB72FFCC4A380CCFB22707E8 /* Pods-HMGithub.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HMGithub/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.HMGithub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C44020B71CC0130700A4AC00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HMGithubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.HMGithubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C44020B81CC0130700A4AC00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HMGithubTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.HMGithubTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C44020991CC0130700A4AC00 /* Build configuration list for PBXProject "HMGithub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C44020B11CC0130700A4AC00 /* Debug */,
+				C44020B21CC0130700A4AC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C44020B31CC0130700A4AC00 /* Build configuration list for PBXNativeTarget "HMGithub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C44020B41CC0130700A4AC00 /* Debug */,
+				C44020B51CC0130700A4AC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C44020B61CC0130700A4AC00 /* Build configuration list for PBXNativeTarget "HMGithubTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C44020B71CC0130700A4AC00 /* Debug */,
+				C44020B81CC0130700A4AC00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C44020961CC0130700A4AC00 /* Project object */;
+}
