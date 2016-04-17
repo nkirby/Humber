@@ -45,6 +45,7 @@ class SettingsViewController: UITableViewController, NavigationBarUpdating, Tabl
     
     private func setupTableView() {
         self.tableView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
+        self.tableView.backgroundColor = Theme.color(type: .ViewBackgroundColor)
     }
     
     private func setupNavigationItem() {
