@@ -1,10 +1,7 @@
-//
-//  LoginPromptViewController.swift
-//  Humber
-//
-//  Created by Nathaniel Kirby on 4/15/16.
-//  Copyright © 2016 projectspong. All rights reserved.
-//
+// =======================================================
+// Humber
+// Nathaniel Kirby
+// =======================================================
 
 import UIKit
 import SafariServices
@@ -12,23 +9,30 @@ import SafariServices
 import HMCore
 import HMGithub
 
-class LoginPromptViewController: UIViewController {
+// =======================================================
 
+class LoginPromptViewController: UIViewController {
     @IBOutlet var introLabel: UILabel!
     @IBOutlet var loginButton: UIButton!
+    
+// =======================================================
+// MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = Theme.color(type: .ViewBackgroundColor)
+        
         // Do any additional setup after loading the view.
-        self.introLabel.font = Font.regular(size: 16.0)
+        self.introLabel.font = Font.bold(size: 18.0)
+        self.introLabel.textColor = Theme.color(type: .PrimaryTextColor)
         self.introLabel.text = "Log Into Github"
         
-        self.loginButton.backgroundColor = UIColor(red: 75.0/255.0, green: 133.0/255.0, blue: 17.0/255.0, alpha: 1.0)
+        self.loginButton.backgroundColor = Theme.color(type: .TintColor)
         
         let attrString = NSAttributedString(string: "Login", attributes: [
             NSFontAttributeName: Font.bold(size: 12.0),
-            NSForegroundColorAttributeName: UIColor.whiteColor()
+            NSForegroundColorAttributeName: Theme.color(type: .ViewBackgroundColor)
         ])
         
         self.loginButton.setAttributedTitle(attrString, forState: .Normal)
@@ -38,6 +42,9 @@ class LoginPromptViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+// =======================================================
+// MARK: - Actions
     
     @IBAction func loginTapped(sender: AnyObject) {
         guard let loginController = ServiceController.component(GithubLoginRequestProviding.self) else {

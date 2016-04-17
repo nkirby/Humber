@@ -78,7 +78,9 @@ public class ServiceController: NSObject {
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: ServiceController.userDefaultsKey)
         CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication)
 
-        self.currentUser.value = nil
+        let context = ServiceContext(userIdentifier: "anon")
+        let user = ServiceContainer(context: context, container: ServiceController.container)
+        self.currentUser.value = user
     }
     
 // =======================================================
