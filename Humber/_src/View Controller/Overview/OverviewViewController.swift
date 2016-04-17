@@ -5,6 +5,7 @@
 
 import UIKit
 import Async
+import SafariServices
 
 import HMCore
 import HMGithub
@@ -13,7 +14,7 @@ private let reuseIdentifier = "Cell"
 
 // =======================================================
 
-class OverviewViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, NavigationBarUpdating {
+class OverviewViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, NavigationBarUpdating, UIViewControllerPreviewingDelegate {
     private var overviewItems = [GithubOverviewItemModel]()
     private var viewControllers = [OverviewItemSingleStatViewController]()
     
@@ -35,6 +36,10 @@ class OverviewViewController: UICollectionViewController, UICollectionViewDelega
         
         if let notifName = ServiceController.component(GithubOverviewSyncProviding.self)?.didChangeOverviewNotification {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(OverviewViewController.fetch), name: notifName, object: nil)
+        }
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
         }
     }
 
@@ -194,5 +199,45 @@ class OverviewViewController: UICollectionViewController, UICollectionViewDelega
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
         
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        guard let feedItem = self.overviewItems.get(indexPath.row) else {
+            return
+        }
+        
+        switch feedItem.type {
+        case "stats":
+            if let url = NSURL(string: "https://github.com/\(feedItem.repoOwner)/\(feedItem.repoName)/\(feedItem.action)") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                self.navigationController?.presentViewController(sfvc, animated: true, completion: nil)
+            }
+            
+        default:
+            break
+        }
+    }
+    
+// =======================================================
+// MARK: - Force Touch
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.collectionView?.indexPathForItemAtPoint(location),
+            let feedItem = self.overviewItems.get(indexPath.row) else {
+                return nil
+        }
+        
+        if let url = NSURL(string: "https://github.com/\(feedItem.repoOwner)/\(feedItem.repoName)/\(feedItem.action)") {
+            let sfvc = SFSafariViewController(URL: url)
+            sfvc.modalPresentationStyle = .FormSheet
+            return sfvc
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.navigationController?.presentViewController(viewControllerToCommit, animated: true, completion: nil)
     }
 }

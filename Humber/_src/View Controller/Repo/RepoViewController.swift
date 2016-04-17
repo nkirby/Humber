@@ -75,9 +75,6 @@ class RepoViewController: UITableViewController, NavigationBarUpdating, PullToRe
                 self.repo = ServiceController.component(GithubRepoDataProviding.self)?.repo(repoName: repoName, repoOwner: repoOwner)
             }
             
-            print("\(self.repoName) - \(self.repoOwner)")
-            print("repo: \(self.repo)")
-            
             self.tableView.reloadData()
         }
     }
