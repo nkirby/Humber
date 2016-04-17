@@ -42,7 +42,6 @@
 		C44021461CC1F20400A4AC00 /* IssueHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021451CC1F20400A4AC00 /* IssueHeaderCell.swift */; };
 		C440214F1CC295C500A4AC00 /* SingleNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C440214E1CC295C500A4AC00 /* SingleNotificationCell.swift */; };
 		C44021521CC29CF300A4AC00 /* ApplicationStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021511CC29CF300A4AC00 /* ApplicationStyleController.swift */; };
-		C440216A1CC2CC7F00A4AC00 /* NavigationBarUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021691CC2CC7F00A4AC00 /* NavigationBarUpdating.swift */; };
 		C44021A11CC2FE8A00A4AC00 /* PullToRefreshProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021A01CC2FE8A00A4AC00 /* PullToRefreshProviding.swift */; };
 		C44021B01CC313BC00A4AC00 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021AF1CC313BC00A4AC00 /* RepoViewController.swift */; };
 		C44021B31CC319FD00A4AC00 /* SingleRepoLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021B21CC319FD00A4AC00 /* SingleRepoLinkCell.swift */; };
@@ -65,6 +64,8 @@
 		C44021EA1CC41E5500A4AC00 /* HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; };
 		C44021EB1CC41E5500A4AC00 /* HMGithub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C44021ED1CC4317300A4AC00 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */; };
+		C44021F21CC4448A00A4AC00 /* NavigationBarUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */; };
+		C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F31CC4449900A4AC00 /* ThemeElements.swift */; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -148,7 +149,6 @@
 		C44021451CC1F20400A4AC00 /* IssueHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssueHeaderCell.swift; path = "_src/Table View Cells/IssueHeaderCell.swift"; sourceTree = "<group>"; };
 		C440214E1CC295C500A4AC00 /* SingleNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleNotificationCell.swift; path = "_src/Table View Cells/SingleNotificationCell.swift"; sourceTree = "<group>"; };
 		C44021511CC29CF300A4AC00 /* ApplicationStyleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationStyleController.swift; path = _src/Controller/ApplicationStyleController.swift; sourceTree = "<group>"; };
-		C44021691CC2CC7F00A4AC00 /* NavigationBarUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarUpdating.swift; path = _src/Theming/NavigationBarUpdating.swift; sourceTree = "<group>"; };
 		C44021A01CC2FE8A00A4AC00 /* PullToRefreshProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullToRefreshProviding.swift; path = _src/Protocols/PullToRefreshProviding.swift; sourceTree = "<group>"; };
 		C44021AF1CC313BC00A4AC00 /* RepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RepoViewController.swift; path = "_src/View Controller/Repo/RepoViewController.swift"; sourceTree = "<group>"; };
 		C44021B21CC319FD00A4AC00 /* SingleRepoLinkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SingleRepoLinkCell.swift; path = "_src/Table View Cells/SingleRepoLinkCell.swift"; sourceTree = "<group>"; };
@@ -170,6 +170,8 @@
 		C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewStatItemCollectionCell.swift; path = "_src/Collection Cell/OverviewStatItemCollectionCell.swift"; sourceTree = "<group>"; };
 		C44021E91CC41E5500A4AC00 /* HMGithub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMGithub.framework; path = ../_lib/_build/HMGithub.framework; sourceTree = "<group>"; };
 		C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountHeaderCell.swift; path = "_src/Table View Cells/AccountHeaderCell.swift"; sourceTree = "<group>"; };
+		C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarUpdating.swift; path = _src/Protocols/NavigationBarUpdating.swift; sourceTree = "<group>"; };
+		C44021F31CC4449900A4AC00 /* ThemeElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeElements.swift; path = _src/Theming/ThemeElements.swift; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -474,7 +476,7 @@
 			children = (
 				C44021B61CC321D500A4AC00 /* Theme.swift */,
 				C44021B81CC3236C00A4AC00 /* Themes.swift */,
-				C44021691CC2CC7F00A4AC00 /* NavigationBarUpdating.swift */,
+				C44021F31CC4449900A4AC00 /* ThemeElements.swift */,
 			);
 			name = Theming;
 			sourceTree = "<group>";
@@ -482,6 +484,7 @@
 		C44021A21CC2FE8D00A4AC00 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */,
 				C44021A01CC2FE8A00A4AC00 /* PullToRefreshProviding.swift */,
 			);
 			name = Protocols;
@@ -858,6 +861,7 @@
 				C44020C81CC13F5800A4AC00 /* LoginPromptViewController.swift in Sources */,
 				C44021D11CC34CF100A4AC00 /* EditOverviewItemValueCell.swift in Sources */,
 				C44021B51CC31E4D00A4AC00 /* SingleRepoHeaderCell.swift in Sources */,
+				C44021F21CC4448A00A4AC00 /* NavigationBarUpdating.swift in Sources */,
 				C440212C1CC1D27700A4AC00 /* NotificationListViewController.swift in Sources */,
 				C44020F91CC1857500A4AC00 /* GithubRoutes.swift in Sources */,
 				C44021201CC1AD0600A4AC00 /* GistListViewController.swift in Sources */,
@@ -866,7 +870,6 @@
 				C440212F1CC1D46900A4AC00 /* IssuesListViewController.swift in Sources */,
 				C44021E31CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift in Sources */,
 				C44020FC1CC187F400A4AC00 /* GithubRouteHandler.swift in Sources */,
-				C440216A1CC2CC7F00A4AC00 /* NavigationBarUpdating.swift in Sources */,
 				C44021321CC1D53400A4AC00 /* PullRequestListViewController.swift in Sources */,
 				C44021B01CC313BC00A4AC00 /* RepoViewController.swift in Sources */,
 				C440214F1CC295C500A4AC00 /* SingleNotificationCell.swift in Sources */,
@@ -885,6 +888,7 @@
 				C44021A11CC2FE8A00A4AC00 /* PullToRefreshProviding.swift in Sources */,
 				C4ED36571CC006B3008B8684 /* ApplicationSetupController.swift in Sources */,
 				C44020BC1CC129D200A4AC00 /* RootViewController.swift in Sources */,
+				C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */,
 				C44020FE1CC1896000A4AC00 /* AccountFollowersViewController.swift in Sources */,
 				C44021441CC1E97900A4AC00 /* IssueSingleDetailCell.swift in Sources */,
 				C440213C1CC1DF5900A4AC00 /* SingleIssueCell.swift in Sources */,

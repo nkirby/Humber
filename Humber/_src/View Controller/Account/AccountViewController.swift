@@ -147,7 +147,7 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
 
         case (self.tableSectionRepos, 0):
             if let cell = tableView.dequeueReusableCellWithIdentifier("AccountIconAndCountCell") as? AccountIconAndCountCell {
-                let viewModel = AccountIconAndCountViewModel(title: "All Repos", icon: Image(source: .Local("followers"), type: .PNG), count: (user.publicRepos + user.ownedPrivateRepos))
+                let viewModel = AccountIconAndCountViewModel(title: "All Repos", icon: Image(source: .Local("repo"), type: .PNG), count: (user.publicRepos + user.ownedPrivateRepos))
                 cell.render(model: viewModel)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 
@@ -156,7 +156,7 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
 
         case (self.tableSectionRepos, 1):
             if let cell = tableView.dequeueReusableCellWithIdentifier("AccountIconAndCountCell") as? AccountIconAndCountCell {
-                let viewModel = AccountIconAndCountViewModel(title: "Public Repos", icon: Image(source: .Local("followers"), type: .PNG), count: user.publicRepos)
+                let viewModel = AccountIconAndCountViewModel(title: "Public Repos", icon: Image(source: .Local("repo"), type: .PNG), count: user.publicRepos)
                 cell.render(model: viewModel)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 
@@ -165,7 +165,7 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
 
         case (self.tableSectionRepos, 2):
             if let cell = tableView.dequeueReusableCellWithIdentifier("AccountIconAndCountCell") as? AccountIconAndCountCell {
-                let viewModel = AccountIconAndCountViewModel(title: "Private Repos", icon: Image(source: .Local("followers"), type: .PNG), count: user.ownedPrivateRepos)
+                let viewModel = AccountIconAndCountViewModel(title: "Private Repos", icon: Image(source: .Local("repo"), type: .PNG), count: user.ownedPrivateRepos)
                 cell.render(model: viewModel)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 
@@ -174,7 +174,7 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
 
         case (self.tableSectionGists, 0):
             if let cell = tableView.dequeueReusableCellWithIdentifier("AccountIconAndCountCell") as? AccountIconAndCountCell {
-                let viewModel = AccountIconAndCountViewModel(title: "Public Gists", icon: Image(source: .Local("followers"), type: .PNG), count: user.publicGists)
+                let viewModel = AccountIconAndCountViewModel(title: "Public Gists", icon: Image(source: .Local("gist"), type: .PNG), count: user.publicGists)
                 cell.render(model: viewModel)
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
                 

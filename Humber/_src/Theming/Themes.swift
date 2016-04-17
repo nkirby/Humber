@@ -9,10 +9,10 @@ import HMCore
 
 // =======================================================
 
-class LightTheme: NSObject, Themable {
+internal final class LightTheme: NSObject, Themable {
     let name = "Light"
     
-    func color(type type: ColorType) -> UIColor {
+    internal func color(type type: ColorType) -> UIColor {
         switch type {
         case .CellBackgroundColor:
             return UIColor.whiteColor()
@@ -34,7 +34,7 @@ class LightTheme: NSObject, Themable {
         }
     }
     
-    func font(type type: FontType) -> UIFont {
+    internal func font(type type: FontType) -> UIFont {
         switch type {
         case .Bold(let size):
             return Font.bold(size: size)

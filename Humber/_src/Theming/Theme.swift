@@ -5,31 +5,9 @@
 
 import UIKit
 
-public enum ColorType {
-    case PrimaryTextColor
-    case SecondaryTextColor
-    case DisabledTextColor
-    case TintColor
-    case ViewBackgroundColor
-    case CellBackgroundColor
-}
-
-public enum FontType {
-    case Bold(CGFloat)
-    case Regular(CGFloat)
-    case Italic(CGFloat)
-}
-
-public protocol Themable {
-    var name: String { get }
-    
-    func color(type type: ColorType) -> UIColor
-    func font(type type: FontType) -> UIFont
-}
-
 // =======================================================
 
-class Theme: NSObject {
+internal final class Theme: NSObject {
     private(set) internal static var themes = [Themable]()
     internal static let themeChangedNotification = "HMThemeDidChangeNotification"
     
