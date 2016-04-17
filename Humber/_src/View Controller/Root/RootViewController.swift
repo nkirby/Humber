@@ -1,14 +1,13 @@
-//
-//  RootViewController.swift
-//  Humber
-//
-//  Created by Nathaniel Kirby on 4/15/16.
-//  Copyright © 2016 projectspong. All rights reserved.
-//
+// =======================================================
+// Humber
+// Nathaniel Kirby
+// =======================================================
 
 import UIKit
 import HMCore
 import SnapKit
+
+// =======================================================
 
 class RootViewController: UIViewController {
     @IBOutlet var containerView: UIView!
@@ -16,6 +15,9 @@ class RootViewController: UIViewController {
     
     // Routing
     private var githubRouteHandler: GithubRouteHandler?
+    
+// =======================================================
+// MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,14 @@ class RootViewController: UIViewController {
         self.interfaceViewController?.view.frame = self.containerView.bounds
     }
     
+// =======================================================
+// MARK: - Interface
+    
     private func updateInterface(user user: ServiceContainer) {
         let vc = UIStoryboard(name: "Main", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("rootTabBarController") as! UITabBarController
         
         vc.tabBar.tintColor = UIColor(red: 75.0/255.0, green: 133.0/255.0, blue: 17.0/255.0, alpha: 1.0)
+        
         self.containerView.addSubview(vc.view)
         self.addChildViewController(vc)
         
@@ -65,6 +71,9 @@ class RootViewController: UIViewController {
         self.interfaceViewController = vc
     }
     
+// =======================================================
+// MARK: - View Retrieval
+    
     internal func currentNavigationController() -> UINavigationController? {
         guard let tabsController = self.interfaceViewController as? UITabBarController,
             let vc = tabsController.selectedViewController else {
@@ -73,4 +82,5 @@ class RootViewController: UIViewController {
         
         return (vc as? UINavigationController)
     }
+    
 }

@@ -66,6 +66,7 @@
 		C44021ED1CC4317300A4AC00 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */; };
 		C44021F21CC4448A00A4AC00 /* NavigationBarUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */; };
 		C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F31CC4449900A4AC00 /* ThemeElements.swift */; };
+		C44021F61CC4486900A4AC00 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -172,6 +173,7 @@
 		C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountHeaderCell.swift; path = "_src/Table View Cells/AccountHeaderCell.swift"; sourceTree = "<group>"; };
 		C44021F11CC4448900A4AC00 /* NavigationBarUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarUpdating.swift; path = _src/Protocols/NavigationBarUpdating.swift; sourceTree = "<group>"; };
 		C44021F31CC4449900A4AC00 /* ThemeElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeElements.swift; path = _src/Theming/ThemeElements.swift; sourceTree = "<group>"; };
+		C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTabBarViewController.swift; path = "_src/View Controller/Root/RootTabBarViewController.swift"; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				C44020BB1CC129D200A4AC00 /* RootViewController.swift */,
+				C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				C44021A11CC2FE8A00A4AC00 /* PullToRefreshProviding.swift in Sources */,
 				C4ED36571CC006B3008B8684 /* ApplicationSetupController.swift in Sources */,
 				C44020BC1CC129D200A4AC00 /* RootViewController.swift in Sources */,
+				C44021F61CC4486900A4AC00 /* RootTabBarViewController.swift in Sources */,
 				C44021F41CC4449900A4AC00 /* ThemeElements.swift in Sources */,
 				C44020FE1CC1896000A4AC00 /* AccountFollowersViewController.swift in Sources */,
 				C44021441CC1E97900A4AC00 /* IssueSingleDetailCell.swift in Sources */,
