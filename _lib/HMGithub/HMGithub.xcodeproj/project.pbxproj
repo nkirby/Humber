@@ -72,6 +72,7 @@
 		C44021C91CC3354700A4AC00 /* SyncController+OverviewEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021C81CC3354700A4AC00 /* SyncController+OverviewEdit.swift */; };
 		C44021D31CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D21CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift */; };
 		C44021D51CC34F7D00A4AC00 /* GithubOverviewItemAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D41CC34F7D00A4AC00 /* GithubOverviewItemAction.swift */; };
+		C44021E81CC40C2500A4AC00 /* GithubAPI+QueryCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E71CC40C2500A4AC00 /* GithubAPI+QueryCounts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		C44021C81CC3354700A4AC00 /* SyncController+OverviewEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SyncController+OverviewEdit.swift"; path = "_src/Sync/SyncController+OverviewEdit.swift"; sourceTree = "<group>"; };
 		C44021D21CC34EDE00A4AC00 /* GithubOverviewItemThreshold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItemThreshold.swift; path = _src/Types/GithubOverviewItemThreshold.swift; sourceTree = "<group>"; };
 		C44021D41CC34F7D00A4AC00 /* GithubOverviewItemAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GithubOverviewItemAction.swift; path = _src/Types/GithubOverviewItemAction.swift; sourceTree = "<group>"; };
+		C44021E71CC40C2500A4AC00 /* GithubAPI+QueryCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "GithubAPI+QueryCounts.swift"; path = "_src/API/GithubAPI+QueryCounts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				C440214C1CC28FB400A4AC00 /* GithubAPI+Notifications.swift */,
 				C44021171CC1A99F00A4AC00 /* GithubAPI+Repos.swift */,
 				C44020EA1CC1707C00A4AC00 /* GithubAPI+User.swift */,
+				C44021E71CC40C2500A4AC00 /* GithubAPI+QueryCounts.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				C44021AA1CC3057000A4AC00 /* SyncController+Notifications.swift in Sources */,
 				C440218F1CC2EA9B00A4AC00 /* SyncController+AccountRepos.swift in Sources */,
 				C44020E91CC1703800A4AC00 /* GithubRequest.swift in Sources */,
+				C44021E81CC40C2500A4AC00 /* GithubAPI+QueryCounts.swift in Sources */,
 				C44021AC1CC3084000A4AC00 /* GithubNotificationCollection.swift in Sources */,
 				C440213A1CC1D9FA00A4AC00 /* GithubIssueResponse.swift in Sources */,
 				C440219B1CC2F65D00A4AC00 /* DataController+Issues.swift in Sources */,

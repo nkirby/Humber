@@ -20,6 +20,8 @@ public protocol GithubOverviewSyncProviding {
     
     func editOverviewItem(itemID itemID: String, title: String) -> SignalProducer<Void, SyncError>
     func editOverviewItem(itemID itemID: String, title: String, repoName: String, repoOwner: String, type: String, threshold: Int) -> SignalProducer<Void, SyncError>
+    
+    func syncOverviewItem(itemID itemID: String) -> SignalProducer<Void, SyncError>
 }
 
 // =======================================================
@@ -106,6 +108,27 @@ extension SyncController: GithubOverviewSyncProviding {
             
             observer.sendNext()
             observer.sendCompleted()
+        }
+    }
+    
+    public func syncOverviewItem(itemID itemID: String) -> SignalProducer<Void, SyncError> {
+        return SignalProducer { observer, disposable in
+            guard let api = ServiceController.component(GithubAPIQueryCountsProviding.self),
+                let data = ServiceController.component(GithubOverviewDataProviding.self),
+                let item = data.overviewItem(itemID: itemID) else {
+                    observer.sendFailed(SyncError.Unknown)
+                    return
+            }
+            
+            let disp = api.getCounts(query: item.query)
+                .on(failed: { _ in observer.sendFailed(.Unknown) })
+                .startWithNext { count in
+                    data.editOverviewItem(itemID: item.itemID, value: count, write: true)
+                    observer.sendNext()
+                    observer.sendCompleted()
+                }
+            
+            disposable.addDisposable(disp)
         }
     }
 }

@@ -13,10 +13,13 @@ import HMCore
 public protocol GithubOverviewDataProviding {
     func sortedOverviewItems() -> [GithubOverviewItemModel]
     func newOverviewItem(type type: String, write: Bool) -> GithubOverviewItemModel
+    func overviewItem(itemID itemID: String) -> GithubOverviewItemModel?
+
     func removeOverviewItem(itemID itemID: String, write: Bool)
     func moveOverviewItem(itemID itemID: String, toPosition position: Int, write: Bool)
     func editOverviewItem(itemID itemID: String, title: String, write: Bool)
     func editOverviewItem(itemID itemID: String, title: String, repoName: String, repoOwner: String, type: String, threshold: Int, write: Bool)
+    func editOverviewItem(itemID itemID: String, value: Int, write: Bool)
 }
 
 extension DataController: GithubOverviewDataProviding {
@@ -40,8 +43,16 @@ extension DataController: GithubOverviewDataProviding {
         return overview
     }
     
-    internal func overviewItem(itemID itemID: String) -> GithubOverviewItem? {
+    internal func overviewItemObj(itemID itemID: String) -> GithubOverviewItem? {
         return self.realm().objects(GithubOverviewItem.self).filter("itemID == %@", itemID).first
+    }
+
+    public func overviewItem(itemID itemID: String) -> GithubOverviewItemModel? {
+        if let obj = self.overviewItemObj(itemID: itemID) {
+            return GithubOverviewItemModel(object: obj)
+        }
+    
+        return nil
     }
 
     public func sortedOverviewItems() -> [GithubOverviewItemModel] {
@@ -71,7 +82,7 @@ extension DataController: GithubOverviewDataProviding {
     
     public func removeOverviewItem(itemID itemID: String, write: Bool) {
         let block = {
-            if let obj = self.overviewItem(itemID: itemID) {
+            if let obj = self.overviewItemObj(itemID: itemID) {
                 self.realm().delete(obj)
             }
         }
@@ -86,7 +97,7 @@ extension DataController: GithubOverviewDataProviding {
     public func moveOverviewItem(itemID itemID: String, toPosition position: Int, write: Bool) {
         let block = {
             let overviewItems = self.currentOverview(write: false).items
-            if let obj = self.overviewItem(itemID: itemID), let idx = overviewItems.indexOf(obj) {
+            if let obj = self.overviewItemObj(itemID: itemID), let idx = overviewItems.indexOf(obj) {
                 overviewItems.removeAtIndex(idx)
                 overviewItems.insert(obj, atIndex: position)
                 
@@ -107,7 +118,7 @@ extension DataController: GithubOverviewDataProviding {
     
     public func editOverviewItem(itemID itemID: String, title: String, write: Bool) {
         let block = {
-            if let obj = self.overviewItem(itemID: itemID) {
+            if let obj = self.overviewItemObj(itemID: itemID) {
                 obj.title = title
             }
         }
@@ -121,13 +132,27 @@ extension DataController: GithubOverviewDataProviding {
     
     public func editOverviewItem(itemID itemID: String, title: String, repoName: String, repoOwner: String, type: String, threshold: Int, write: Bool) {
         let block = {
-            if let obj = self.overviewItem(itemID: itemID) {
+            if let obj = self.overviewItemObj(itemID: itemID) {
                 obj.title = title
                 obj.repoName = repoName
                 obj.repoOwner = repoOwner
                 obj.threshold = threshold
                 obj.action = type
-                obj.query = "\(repoOwner)/\(repoName)/\(type)".lowercaseString
+                obj.query = "/repos/\(repoOwner)/\(repoName)/\(type)".lowercaseString
+            }
+        }
+        
+        if write {
+            self.withRealmTransaction(block)
+        } else {
+            block()
+        }
+    }
+    
+    public func editOverviewItem(itemID itemID: String, value: Int, write: Bool) {
+        let block = {
+            if let obj = self.overviewItemObj(itemID: itemID) {
+                obj.value = value
             }
         }
         

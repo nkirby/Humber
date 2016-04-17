@@ -112,7 +112,12 @@ public class GithubAPI: NSObject {
     
 // =======================================================
 // MARK: - Request Performing
-    
+
+    public func enqueueOnly(request request: GithubRequest) -> SignalProducer<AnyObject, GithubAPIError> {
+        return self.request(method: request.method, endpoint: request.endpoint, parameters: request.parameters)
+            .flatMap(.Latest) { self.enqueue(request: $0) }
+    }
+
     public func enqueueAndParse<T: JSONDecodable>(request request: GithubRequest, toType type: T.Type) -> SignalProducer<T, GithubAPIError> {
         return self.request(method: request.method, endpoint: request.endpoint, parameters: request.parameters)
             .flatMap(.Latest) { self.enqueue(request: $0) }
