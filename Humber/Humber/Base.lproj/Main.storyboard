@@ -271,6 +271,54 @@
                                     <outlet property="titleLabel" destination="XhW-GV-3SZ" id="tFI-tg-pUp"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" selectionStyle="default" indentationWidth="10" reuseIdentifier="AccountHeaderCell" rowHeight="67" id="GEy-eV-HKi" customClass="AccountHeaderCell" customModule="Humber" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158" width="600" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GEy-eV-HKi" id="RIa-rh-AuD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cS5-6K-Lvm">
+                                            <rect key="frame" x="18" y="17" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="534-Cu-8V8"/>
+                                                <constraint firstAttribute="height" constant="32" id="axw-ni-Niw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="67P-rS-5BV">
+                                            <rect key="frame" x="58" y="8" width="42" height="50"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTM-2x-Rbx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuq-Ax-YZy">
+                                                    <rect key="frame" x="0.0" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="67P-rS-5BV" firstAttribute="top" secondItem="RIa-rh-AuD" secondAttribute="topMargin" id="9k1-fB-UjZ"/>
+                                        <constraint firstItem="cS5-6K-Lvm" firstAttribute="centerY" secondItem="RIa-rh-AuD" secondAttribute="centerY" id="Dp0-fs-gFZ"/>
+                                        <constraint firstItem="67P-rS-5BV" firstAttribute="leading" secondItem="cS5-6K-Lvm" secondAttribute="trailing" constant="8" id="XTm-ni-wh7"/>
+                                        <constraint firstItem="67P-rS-5BV" firstAttribute="bottom" secondItem="RIa-rh-AuD" secondAttribute="bottomMargin" id="sSc-72-5tl"/>
+                                        <constraint firstItem="cS5-6K-Lvm" firstAttribute="leading" secondItem="RIa-rh-AuD" secondAttribute="leadingMargin" constant="10" id="yc2-0f-yMY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <edgeInsets key="layoutMargins" top="4" left="8" bottom="4" right="8"/>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="cS5-6K-Lvm" id="KJr-QE-J0g"/>
+                                    <outlet property="bioLabel" destination="Uuq-Ax-YZy" id="525-OI-yGx"/>
+                                    <outlet property="nameLabel" destination="kTM-2x-Rbx" id="Gk9-fE-H0Q"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="vrl-h1-xKY" id="ZMF-u1-CL5"/>

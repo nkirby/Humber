@@ -64,6 +64,7 @@
 		C44021E61CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */; };
 		C44021EA1CC41E5500A4AC00 /* HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; };
 		C44021EB1CC41E5500A4AC00 /* HMGithub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C44021ED1CC4317300A4AC00 /* AccountHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -168,6 +169,7 @@
 		C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewItemSingleStatViewController.swift; path = "_src/View Controller/Single Stats/OverviewItemSingleStatViewController.swift"; sourceTree = "<group>"; };
 		C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewStatItemCollectionCell.swift; path = "_src/Collection Cell/OverviewStatItemCollectionCell.swift"; sourceTree = "<group>"; };
 		C44021E91CC41E5500A4AC00 /* HMGithub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMGithub.framework; path = ../_lib/_build/HMGithub.framework; sourceTree = "<group>"; };
+		C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountHeaderCell.swift; path = "_src/Table View Cells/AccountHeaderCell.swift"; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 		C44020F31CC177A000A4AC00 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				C44021EC1CC4317300A4AC00 /* AccountHeaderCell.swift */,
 				C44020F01CC1779600A4AC00 /* AccountIconAndCountCell.swift */,
 				C44021051CC1919800A4AC00 /* AccountFollowedUserCell.swift */,
 			);
@@ -541,7 +544,6 @@
 		C4ED35E11CBFEC9E008B8684 = {
 			isa = PBXGroup;
 			children = (
-				C44021E91CC41E5500A4AC00 /* HMGithub.framework */,
 				C4ED365A1CC00762008B8684 /* _config */,
 				C4ED36581CC006B6008B8684 /* _src */,
 				C4ED35EC1CBFEC9E008B8684 /* Humber */,
@@ -630,6 +632,7 @@
 		D129DD62E8C19A671DF9CD5C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C44021E91CC41E5500A4AC00 /* HMGithub.framework */,
 				C44020B91CC0131800A4AC00 /* HMGithub.framework */,
 				C4ED36461CBFF2EF008B8684 /* HMCore.framework */,
 				C4ED36421CBFF23E008B8684 /* HMCore.framework */,
@@ -874,6 +877,7 @@
 				C44021C61CC333E500A4AC00 /* EditOverviewAddCell.swift in Sources */,
 				C44021B91CC3236C00A4AC00 /* Themes.swift in Sources */,
 				C44021151CC19DD600A4AC00 /* SingleGistCell.swift in Sources */,
+				C44021ED1CC4317300A4AC00 /* AccountHeaderCell.swift in Sources */,
 				C44021DA1CC355EF00A4AC00 /* SelectItemTypeViewController.swift in Sources */,
 				C44020F11CC1779600A4AC00 /* AccountIconAndCountCell.swift in Sources */,
 				C44021D71CC3513F00A4AC00 /* SelectRepoViewController.swift in Sources */,

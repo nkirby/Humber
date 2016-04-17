@@ -107,9 +107,9 @@ class EditOverviewViewController: UITableViewController, NavigationBarUpdating {
             self.addDivider()
         }))
 
-        actionSheet.addAction(UIAlertAction(title: "Global Stats", style: .Default, handler: { action in
-            self.addGlobalStats()
-        }))
+//        actionSheet.addAction(UIAlertAction(title: "Global Stats", style: .Default, handler: { action in
+//            self.addGlobalStats()
+//        }))
 
         actionSheet.addAction(UIAlertAction(title: "Repo Stats", style: .Default, handler: { action in
             self.addRepoStats()
