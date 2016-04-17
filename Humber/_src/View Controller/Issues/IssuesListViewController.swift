@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class IssuesListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding {
+class IssuesListViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
     private var issues = [GithubIssueModel]()
     
     required init?(coder aDecoder: NSCoder) {
@@ -34,6 +34,10 @@ class IssuesListViewController: UITableViewController, NavigationBarUpdating, Pu
         self.setupPullToRefresh(self, action: #selector(IssuesListViewController.sync))
         
         self.fetch()
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -120,4 +124,25 @@ class IssuesListViewController: UITableViewController, NavigationBarUpdating, Pu
         
         Router.route(path: GithubRoutes.singleIssue(username: owner.login, repoName: repo.name, number: issue.issueNumber), source: .UserInitiated)
     }
+    
+// =======================================================
+// MARK: - Force Touch
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.tableView.indexPathForRowAtPoint(location),
+            let issue = self.issues.get(indexPath.row),
+            let vc = UIStoryboard(name: "Issues", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("issueViewController") as? IssueViewController else {
+                return nil
+        }
+
+        vc.repoName = issue.repository?.name ?? ""
+        vc.repoOwner = issue.repository?.owner?.login ?? ""
+        vc.issueNumber = "\(issue.issueNumber)"
+        return vc
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+
 }

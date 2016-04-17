@@ -62,6 +62,8 @@
 		C44021E01CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021DF1CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift */; };
 		C44021E31CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */; };
 		C44021E61CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */; };
+		C44021EA1CC41E5500A4AC00 /* HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; };
+		C44021EB1CC41E5500A4AC00 /* HMGithub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C44021E91CC41E5500A4AC00 /* HMGithub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -100,6 +102,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C44021EB1CC41E5500A4AC00 /* HMGithub.framework in Embed Frameworks */,
 				C4ED36481CBFF2EF008B8684 /* HMCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -164,6 +167,7 @@
 		C44021DF1CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewDividerCollectionCell.swift; path = "_src/Collection Cell/OverviewDividerCollectionCell.swift"; sourceTree = "<group>"; };
 		C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewItemSingleStatViewController.swift; path = "_src/View Controller/Single Stats/OverviewItemSingleStatViewController.swift"; sourceTree = "<group>"; };
 		C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewStatItemCollectionCell.swift; path = "_src/Collection Cell/OverviewStatItemCollectionCell.swift"; sourceTree = "<group>"; };
+		C44021E91CC41E5500A4AC00 /* HMGithub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMGithub.framework; path = ../_lib/_build/HMGithub.framework; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			files = (
 				C44020BA1CC0131800A4AC00 /* HMGithub.framework in Frameworks */,
 				C4ED36401CBFF147008B8684 /* HMCore.framework in Frameworks */,
+				C44021EA1CC41E5500A4AC00 /* HMGithub.framework in Frameworks */,
 				5FAF9CA2B85EC6F1F6144F0F /* Pods_Humber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +541,7 @@
 		C4ED35E11CBFEC9E008B8684 = {
 			isa = PBXGroup;
 			children = (
+				C44021E91CC41E5500A4AC00 /* HMGithub.framework */,
 				C4ED365A1CC00762008B8684 /* _config */,
 				C4ED36581CC006B6008B8684 /* _src */,
 				C4ED35EC1CBFEC9E008B8684 /* Humber */,
@@ -706,6 +712,7 @@
 				TargetAttributes = {
 					C4ED35E91CBFEC9E008B8684 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 93EGDHK5KE;
 					};
 					C4ED35FD1CBFEC9E008B8684 = {
 						CreatedOnToolsVersion = 7.3;
@@ -1065,12 +1072,15 @@
 			baseConfigurationReference = 9952621FF36C2CBD06FEF60B /* Pods-Humber.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Humber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DHUMBER_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.Humber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1079,12 +1089,15 @@
 			baseConfigurationReference = DC768C541C06D5D038621C98 /* Pods-Humber.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Humber/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DHUMBER_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.projectspong.Humber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

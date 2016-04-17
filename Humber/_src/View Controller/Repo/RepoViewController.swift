@@ -12,7 +12,7 @@ import HMGithub
 
 // =======================================================
 
-class RepoViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding {
+class RepoViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
     internal var repoID: String?
     internal var repoName: String?
     internal var repoOwner: String?
@@ -28,6 +28,10 @@ class RepoViewController: UITableViewController, NavigationBarUpdating, PullToRe
         self.setupPullToRefresh(self, action: #selector(RepoViewController.sync))
         
         self.fetch()
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -265,5 +269,62 @@ class RepoViewController: UITableViewController, NavigationBarUpdating, PullToRe
         default:
             break
         }
+    }
+    
+// =======================================================
+// MARK: - Force Touch
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.tableView.indexPathForRowAtPoint(location),
+            let repo = self.repo,
+            let owner = repo.owner else {
+                return nil
+        }
+        
+        switch (indexPath.section, indexPath.row) {
+        case (2, 0):
+            if let url = NSURL(string: "https://github.com/\(owner.login)/\(repo.name)/issues") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                return sfvc
+            }
+            
+        case (2, 1):
+            if let url = NSURL(string: "https://github.com/\(owner.login)/\(repo.name)/pulls") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                return sfvc
+            }
+            
+        case (2, 2):
+            if let url = NSURL(string: "https://github.com/\(owner.login)/\(repo.name)/branches") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                return sfvc
+            }
+            
+        case (2, 3):
+            if let url = NSURL(string: "https://github.com/\(owner.login)/\(repo.name)/releases") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                return sfvc
+            }
+            
+        case (2, 4):
+            if let url = NSURL(string: "https://github.com/\(owner.login)/\(repo.name)/wiki") {
+                let sfvc = SFSafariViewController(URL: url)
+                sfvc.modalPresentationStyle = .FormSheet
+                return sfvc
+            }
+
+        default:
+            break
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.navigationController?.presentViewController(viewControllerToCommit, animated: true, completion: nil)
     }
 }

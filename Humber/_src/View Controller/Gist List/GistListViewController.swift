@@ -12,7 +12,7 @@ import HMGithub
 
 // =======================================================
 
-class GistListViewController: UITableViewController, PullToRefreshProviding {
+class GistListViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
     private var gists = [GithubGistModel]()
 
 // =======================================================
@@ -26,6 +26,10 @@ class GistListViewController: UITableViewController, PullToRefreshProviding {
         self.setupPullToRefresh(self, action: #selector(GistListViewController.sync))
         
         self.fetch()
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -95,6 +99,22 @@ class GistListViewController: UITableViewController, PullToRefreshProviding {
         
         let sfvc = SFSafariViewController(URL: url)
         sfvc.modalPresentationStyle = .FormSheet
-        self.presentViewController(sfvc, animated: true, completion: nil)
+        self.navigationController?.presentViewController(sfvc, animated: true, completion: nil)
     }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.tableView.indexPathForRowAtPoint(location),
+            let item = self.gists.get(indexPath.row),
+            let url = NSURL(string: item.htmlURL) else {
+                return nil
+        }
+
+        return SFSafariViewController(URL: url)
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        viewControllerToCommit.modalPresentationStyle = .FormSheet
+        self.navigationController?.presentViewController(viewControllerToCommit, animated: true, completion: nil)
+    }
+
 }

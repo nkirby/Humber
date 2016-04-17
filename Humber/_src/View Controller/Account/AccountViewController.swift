@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class AccountViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding {
+class AccountViewController: UITableViewController, NavigationBarUpdating, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
     private var user: GithubAccountModel?
 
 // =======================================================
@@ -33,6 +33,10 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
         self.setupNavigationBarStyling()
         self.setupPullToRefresh(self, action: #selector(AccountViewController.sync))
         self.fetch()
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -188,5 +192,61 @@ class AccountViewController: UITableViewController, NavigationBarUpdating, PullT
         default:
             break
         }
+    }
+    
+// =======================================================
+// MARK: - Force Touch
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.tableView.indexPathForRowAtPoint(location),
+            let user = self.user else {
+                return nil
+        }
+        
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            if let vc = UIStoryboard(name: "Account", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("accountFollowersViewController") as? AccountFollowersViewController  {
+                vc.username = user.login
+                return vc
+            }
+            
+        case (0, 1):
+            if let vc = UIStoryboard(name: "Account", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("accountFollowingViewController") as? AccountFollowingViewController  {
+                vc.username = user.login
+                return vc
+            }
+
+        case (1, 0):
+            if let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoListViewController") as? RepoListViewController {
+                vc.type = .All
+                return vc
+            }
+
+        case (1, 1):
+            if let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoListViewController") as? RepoListViewController {
+                vc.type = .Public
+                return vc
+            }
+
+        case (1, 1):
+            if let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoListViewController") as? RepoListViewController {
+                vc.type = .Private
+                return vc
+            }
+
+        case (2, 0):
+            if let vc = UIStoryboard(name: "Gists", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("gistListViewController") as? GistListViewController {
+                return vc
+            }
+            
+        default:
+            break
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }

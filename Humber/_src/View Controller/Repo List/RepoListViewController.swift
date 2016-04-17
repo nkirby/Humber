@@ -11,7 +11,7 @@ import HMGithub
 
 // =======================================================
 
-class RepoListViewController: UITableViewController, PullToRefreshProviding {
+class RepoListViewController: UITableViewController, PullToRefreshProviding, UIViewControllerPreviewingDelegate {
     internal var type = GithubRepoType.All
 
     private var tableSectionOwned = Int.min
@@ -32,6 +32,10 @@ class RepoListViewController: UITableViewController, PullToRefreshProviding {
         self.setupPullToRefresh(self, action: #selector(RepoListViewController.sync))
 
         self.fetch()
+        
+        if self.traitCollection.forceTouchCapability == .Available {
+            self.registerForPreviewingWithDelegate(self, sourceView: self.view)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -197,5 +201,45 @@ class RepoListViewController: UITableViewController, PullToRefreshProviding {
         default:
             break
         }
+    }
+    
+// =======================================================
+// MARK: - Force Touch
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = self.tableView.indexPathForRowAtPoint(location) else {
+                return nil
+        }
+        
+        switch indexPath.section {
+        case self.tableSectionOwned:
+            guard let repo = self.ownedRepos.get(indexPath.row),
+                let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoViewController") as? RepoViewController else {
+                    return nil
+            }
+
+            vc.repoOwner = repo.owner?.login
+            vc.repoName = repo.name
+            return vc
+            
+        case self.tableSectionContributed:
+            guard let repo = self.contributedRepos.get(indexPath.row),
+                let vc = UIStoryboard(name: "Repos", bundle: Bundle.mainBundle()).instantiateViewControllerWithIdentifier("repoViewController") as? RepoViewController else {
+                    return nil
+            }
+            
+            vc.repoOwner = repo.owner?.login
+            vc.repoName = repo.name
+            return vc
+
+        default:
+            break
+        }
+        
+        return nil
+    }
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }
