@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170F7EAB7402FB78672AC5B1 /* Pods_HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C354554DA5D0D9824B406B9D /* Pods_HMGithub.framework */; };
+		435DD1D11CC474D400154F65 /* Bundle+Github.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DD1D01CC474D400154F65 /* Bundle+Github.swift */; };
 		C44020A31CC0130700A4AC00 /* HMGithub.h in Headers */ = {isa = PBXBuildFile; fileRef = C44020A21CC0130700A4AC00 /* HMGithub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C44020AA1CC0130700A4AC00 /* HMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C440209F1CC0130700A4AC00 /* HMGithub.framework */; };
 		C44020AF1CC0130700A4AC00 /* HMGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020AE1CC0130700A4AC00 /* HMGithubTests.swift */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		2AB2E2632BF20B2DBCFEB813 /* Pods-HMGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMGithub.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-HMGithub/Pods-HMGithub.debug.xcconfig"; sourceTree = "<group>"; };
+		435DD1D01CC474D400154F65 /* Bundle+Github.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle+Github.swift"; path = "_src/Extensions/Bundle+Github.swift"; sourceTree = "<group>"; };
 		AB72FFCC4A380CCFB22707E8 /* Pods-HMGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMGithub.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-HMGithub/Pods-HMGithub.release.xcconfig"; sourceTree = "<group>"; };
 		C354554DA5D0D9824B406B9D /* Pods_HMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C440209F1CC0130700A4AC00 /* HMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435DD1D21CC474D700154F65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				435DD1D01CC474D400154F65 /* Bundle+Github.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9750305E2CF04B0A2EF34D1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +252,7 @@
 			children = (
 				C44020E71CC15FED00A4AC00 /* API */,
 				C440215F1CC2BB6700A4AC00 /* Data */,
+				435DD1D21CC474D700154F65 /* Extensions */,
 				C44020E41CC1532B00A4AC00 /* Keychain */,
 				C44020DA1CC1468200A4AC00 /* Login */,
 				C44021621CC2C39000A4AC00 /* Model */,
@@ -580,6 +591,7 @@
 				C44020E11CC152FA00A4AC00 /* GithubOAuthToken.swift in Sources */,
 				C44021A41CC301D300A4AC00 /* GithubNotification.swift in Sources */,
 				C44020E31CC1532700A4AC00 /* GithubKeychainStoreQuery.swift in Sources */,
+				435DD1D11CC474D400154F65 /* Bundle+Github.swift in Sources */,
 				C44021181CC1A99F00A4AC00 /* GithubAPI+Repos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
