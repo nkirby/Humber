@@ -56,8 +56,6 @@
 		C44021D11CC34CF100A4AC00 /* EditOverviewItemValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D01CC34CF100A4AC00 /* EditOverviewItemValueCell.swift */; };
 		C44021D71CC3513F00A4AC00 /* SelectRepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D61CC3513F00A4AC00 /* SelectRepoViewController.swift */; };
 		C44021DA1CC355EF00A4AC00 /* SelectItemTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021D91CC355EF00A4AC00 /* SelectItemTypeViewController.swift */; };
-		C44021DC1CC3F51300A4AC00 /* icon-big.png in Resources */ = {isa = PBXBuildFile; fileRef = C44021DB1CC3F51300A4AC00 /* icon-big.png */; };
-		C44021DE1CC3F5C700A4AC00 /* icon-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = C44021DD1CC3F5C700A4AC00 /* icon-clear.png */; };
 		C44021E01CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021DF1CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift */; };
 		C44021E31CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */; };
 		C44021E61CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */; };
@@ -69,6 +67,8 @@
 		C44021F61CC4486900A4AC00 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */; };
 		C44021F81CC44BC000A4AC00 /* TableDividerUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F71CC44BC000A4AC00 /* TableDividerUpdating.swift */; };
 		C44021FA1CC4501000A4AC00 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44021F91CC4501000A4AC00 /* SettingsViewController.swift */; };
+		C44021FE1CC4712100A4AC00 /* icon-big.png in Resources */ = {isa = PBXBuildFile; fileRef = C44021FC1CC4712100A4AC00 /* icon-big.png */; };
+		C44021FF1CC4712100A4AC00 /* icon-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = C44021FD1CC4712100A4AC00 /* icon-clear.png */; };
 		C4ED35EE1CBFEC9E008B8684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */; };
 		C4ED35F31CBFEC9E008B8684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F11CBFEC9E008B8684 /* Main.storyboard */; };
 		C4ED35F51CBFEC9E008B8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */; };
@@ -166,8 +166,6 @@
 		C44021D01CC34CF100A4AC00 /* EditOverviewItemValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditOverviewItemValueCell.swift; path = "_src/Table View Cells/EditOverviewItemValueCell.swift"; sourceTree = "<group>"; };
 		C44021D61CC3513F00A4AC00 /* SelectRepoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectRepoViewController.swift; path = "_src/View Controller/Selection/SelectRepoViewController.swift"; sourceTree = "<group>"; };
 		C44021D91CC355EF00A4AC00 /* SelectItemTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectItemTypeViewController.swift; path = "_src/View Controller/Selection/SelectItemTypeViewController.swift"; sourceTree = "<group>"; };
-		C44021DB1CC3F51300A4AC00 /* icon-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-big.png"; path = "../../../../Desktop/icons/appicon/icon-big.png"; sourceTree = "<group>"; };
-		C44021DD1CC3F5C700A4AC00 /* icon-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-clear.png"; path = "../../../../Desktop/icons/appicon/icon-clear.png"; sourceTree = "<group>"; };
 		C44021DF1CC3FC4900A4AC00 /* OverviewDividerCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewDividerCollectionCell.swift; path = "_src/Collection Cell/OverviewDividerCollectionCell.swift"; sourceTree = "<group>"; };
 		C44021E21CC4058400A4AC00 /* OverviewItemSingleStatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewItemSingleStatViewController.swift; path = "_src/View Controller/Single Stats/OverviewItemSingleStatViewController.swift"; sourceTree = "<group>"; };
 		C44021E51CC406D300A4AC00 /* OverviewStatItemCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverviewStatItemCollectionCell.swift; path = "_src/Collection Cell/OverviewStatItemCollectionCell.swift"; sourceTree = "<group>"; };
@@ -178,6 +176,8 @@
 		C44021F51CC4486900A4AC00 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootTabBarViewController.swift; path = "_src/View Controller/Root/RootTabBarViewController.swift"; sourceTree = "<group>"; };
 		C44021F71CC44BC000A4AC00 /* TableDividerUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableDividerUpdating.swift; path = _src/Protocols/TableDividerUpdating.swift; sourceTree = "<group>"; };
 		C44021F91CC4501000A4AC00 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "_src/View Controller/Settings/SettingsViewController.swift"; sourceTree = "<group>"; };
+		C44021FC1CC4712100A4AC00 /* icon-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-big.png"; sourceTree = "<group>"; };
+		C44021FD1CC4712100A4AC00 /* icon-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-clear.png"; sourceTree = "<group>"; };
 		C4ED35EA1CBFEC9E008B8684 /* Humber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Humber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4ED35ED1CBFEC9E008B8684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4ED35F21CBFEC9E008B8684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -412,8 +412,8 @@
 		C440212A1CC1CCFB00A4AC00 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				C44021DD1CC3F5C700A4AC00 /* icon-clear.png */,
-				C44021DB1CC3F51300A4AC00 /* icon-big.png */,
+				C44021FC1CC4712100A4AC00 /* icon-big.png */,
+				C44021FD1CC4712100A4AC00 /* icon-clear.png */,
 				C4ED35F41CBFEC9E008B8684 /* Assets.xcassets */,
 				C44020F61CC182A000A4AC00 /* Media.xcassets */,
 			);
@@ -779,8 +779,8 @@
 				C44021231CC1AD6F00A4AC00 /* Repos.storyboard in Resources */,
 				C44020D31CC13FE500A4AC00 /* Hack-Regular.ttf in Resources */,
 				C44020F71CC182A000A4AC00 /* Media.xcassets in Resources */,
-				C44021DC1CC3F51300A4AC00 /* icon-big.png in Resources */,
-				C44021DE1CC3F5C700A4AC00 /* icon-clear.png in Resources */,
+				C44021FE1CC4712100A4AC00 /* icon-big.png in Resources */,
+				C44021FF1CC4712100A4AC00 /* icon-clear.png in Resources */,
 				C4ED36761CC00F21008B8684 /* keys.json in Resources */,
 				C4ED365D1CC00762008B8684 /* debug.json in Resources */,
 				C4ED365E1CC00762008B8684 /* release.json in Resources */,
