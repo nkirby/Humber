@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435DD1D41CC4789F00154F65 /* ShareURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DD1D31CC4789F00154F65 /* ShareURLProvider.swift */; };
+		435DD1D71CC478FA00154F65 /* ShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435DD1D61CC478FA00154F65 /* ShareController.swift */; };
 		B046D0216DD53C606B597F70 /* Pods_HMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2ADD2EEB589EF6A43A9F41 /* Pods_HMCore.framework */; };
 		C44020C01CC1339100A4AC00 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020BF1CC1339100A4AC00 /* Resolver.swift */; };
 		C44020C31CC137D000A4AC00 /* ServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44020C21CC137D000A4AC00 /* ServiceController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		1936BB268EF7ED8CA61D0F83 /* Pods-HMCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMCore.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-HMCore/Pods-HMCore.release.xcconfig"; sourceTree = "<group>"; };
 		3A2ADD2EEB589EF6A43A9F41 /* Pods_HMCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HMCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		435DD1D31CC4789F00154F65 /* ShareURLProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareURLProvider.swift; path = _src/Sharing/ShareURLProvider.swift; sourceTree = "<group>"; };
+		435DD1D61CC478FA00154F65 /* ShareController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareController.swift; path = _src/Sharing/ShareController.swift; sourceTree = "<group>"; };
 		C44020BF1CC1339100A4AC00 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = _src/Resolver/Resolver.swift; sourceTree = "<group>"; };
 		C44020C21CC137D000A4AC00 /* ServiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceController.swift; path = _src/Services/ServiceController.swift; sourceTree = "<group>"; };
 		C44020C51CC138A600A4AC00 /* ServiceContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceContainer.swift; path = _src/Services/ServiceContainer.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435DD1D51CC478A200154F65 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				435DD1D31CC4789F00154F65 /* ShareURLProvider.swift */,
+				435DD1D61CC478FA00154F65 /* ShareController.swift */,
+			);
+			name = Sharing;
+			sourceTree = "<group>";
+		};
 		595A5A6B027BA764C8B4762E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 				C44020C41CC137D300A4AC00 /* Services */,
 				C44021651CC2C59400A4AC00 /* Sync Controller */,
 				C44021F01CC438D400A4AC00 /* Spotlight */,
+				435DD1D51CC478A200154F65 /* Sharing */,
 			);
 			name = _src;
 			sourceTree = "<group>";
@@ -480,6 +494,7 @@
 				C44021581CC2B75900A4AC00 /* FileManager.swift in Sources */,
 				C44021551CC2B6CB00A4AC00 /* DataController.swift in Sources */,
 				C44021641CC2C59000A4AC00 /* SyncController.swift in Sources */,
+				435DD1D71CC478FA00154F65 /* ShareController.swift in Sources */,
 				C4ED36511CBFF881008B8684 /* App.swift in Sources */,
 				C4ED36781CC00FD7008B8684 /* RoutePermission.swift in Sources */,
 				C4ED367B1CC00FF6008B8684 /* RouteSource.swift in Sources */,
@@ -492,6 +507,7 @@
 				C4ED36541CBFF980008B8684 /* Config.swift in Sources */,
 				C4ED364B1CBFF705008B8684 /* Bundle.swift in Sources */,
 				C4ED36711CC00C0F008B8684 /* KeychainStore.swift in Sources */,
+				435DD1D41CC4789F00154F65 /* ShareURLProvider.swift in Sources */,
 				C4ED364F1CBFF75D008B8684 /* BundleInfoDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

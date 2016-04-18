@@ -95,7 +95,13 @@ class IssueViewController: UITableViewController, PullToRefreshProviding, TableD
 // MARK: - Actions
     
     @objc private func didTapShare(sender: UIBarButtonItem) {
+        guard let issue = self.issue,
+            let repo = issue.repository,
+            let activityVC = ServiceController.component(ShareProviding.self)?.share(url: "https://github.com/\(repo.fullName)/issues") else {
+                return
+        }
         
+        self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
 // =======================================================

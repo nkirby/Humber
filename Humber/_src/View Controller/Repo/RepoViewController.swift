@@ -102,7 +102,12 @@ class RepoViewController: UITableViewController, PullToRefreshProviding, TableDi
 // MARK: - Actions
     
     @objc private func didTapShare() {
+        guard let repo = self.repo,
+            let activityVC = ServiceController.component(ShareProviding.self)?.share(url: repo.htmlURL) else {
+                return
+        }
         
+        self.presentViewController(activityVC, animated: true, completion: nil)
     }
     
 // =======================================================
