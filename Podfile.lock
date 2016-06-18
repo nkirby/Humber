@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (3.3.1)
+  - Alamofire (3.4.1)
   - AsyncSwift (1.7.2)
-  - FDKeychain (1.2.2)
+  - FDKeychain (1.3.0)
   - Janus (0.3.0)
   - JLRoutes (1.6)
   - PINCache (2.2.2)
@@ -16,13 +16,13 @@ PODS:
   - ReactiveCocoa/UI (4.1.0):
     - ReactiveCocoa/Core
     - Result (~> 2.0)
-  - Realm (0.98.7):
-    - Realm/Headers (= 0.98.7)
-  - Realm/Headers (0.98.7)
-  - RealmSwift (0.98.7):
-    - Realm (= 0.98.7)
+  - Realm (1.0.1):
+    - Realm/Headers (= 1.0.1)
+  - Realm/Headers (1.0.1)
+  - RealmSwift (1.0.1):
+    - Realm (= 1.0.1)
   - Result (2.0.0)
-  - SnapKit (0.20.0)
+  - SnapKit (0.21.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -36,18 +36,18 @@ DEPENDENCIES:
   - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
-  FDKeychain: ce0d5e4fac972c28e921e893ffe982832695d17b
+  FDKeychain: bd010f28f97ffe7068b3421b77d162b5c2531d61
   Janus: 5f24eb6429ba04bef59f69e7e803eeaa7edef086
   JLRoutes: 435d791422e96c9b9b5e1c4db1aedb3ae1b1a08f
   PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
-  Realm: 46df2178359b6b57812e6cf957956febaba513a5
-  RealmSwift: 3056e6d7ad30ed50dd866185a615fccea73db5f5
+  Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
+  RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
-  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
+  SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
 
 PODFILE CHECKSUM: aac48e6349af28707fbcd2e36e5a0de0969814a4
 
-COCOAPODS: 1.0.0.beta.5
+COCOAPODS: 1.0.0
